@@ -1,0 +1,39 @@
+@value unit, line-height, dark-gray-color from "@jetbrains/ring-ui/components/global/global.css";
+
+.investigations {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+
+  list-style: none;
+
+  word-wrap: break-word;
+
+  line-height: line-height;
+}
+
+.item {
+  margin-bottom: unit;
+}
+
+.details {
+  padding-left: calc(unit * 2);
+
+  list-style: none;
+}
+
+.detail {
+  padding-bottom: unit;
+}
+
+.detailsTitle {
+  color: dark-gray-color;
+}
+
+.hiddenOverflow {
+  display: block;
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

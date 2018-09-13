@@ -1,0 +1,18 @@
+{
+  "key": "teamcity-project-status",
+  "name": "TeamCity Project Status",
+  "version": "1.0.0",
+  "description": "Hub dashboard widget to show the status of TeamCity build configurations",
+  "author": "mazine",
+  "applicationName": "TeamCity",
+  "products": {
+    "Hub": ">=2018.1"
+  },
+  "dependencies": {
+    "Hub": ">=2017.1",
+    "TeamCity": ">=10.0"
+  },
+  "capabilities": {
+    "topNavigation": true
+  }
+}
