@@ -15,7 +15,8 @@ import {
   saveConfiguration,
   selectTeamcityService,
   startConfiguration,
-  updateRefreshPeriod
+  updateRefreshPeriod,
+  updateTitle
 } from './redux/actions';
 
 const TitleContainer = connect(
@@ -43,6 +44,9 @@ TitleContainer.propTypes = {
 const ConfigurationContainer = connect(
   state => ({
     refreshPeriod: state.configuration.refreshPeriod,
+
+    title: state.configuration.title,
+
     isLoadingServices: state.configuration.isLoadingServices,
     selectedService: state.configuration.selectedTeamcityService,
     serviceList: state.configuration.teamcityServices,
@@ -51,6 +55,7 @@ const ConfigurationContainer = connect(
   dispatch => ({
     onRefreshPeriodUpdate: newSeconds => dispatch(updateRefreshPeriod(newSeconds)),
     onServiceSelect: selectedItem => dispatch(selectTeamcityService(selectedItem.service)),
+    onTitleChange: event => dispatch(updateTitle(event.target.value)),
     onSave: () => dispatch(saveConfiguration()),
     onCancel: () => dispatch(cancelConfiguration())
   })

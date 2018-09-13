@@ -14,7 +14,8 @@ import {
   setInitialSettings,
   startedInvestigationsLoading,
   startedTeamcityServicesLoading,
-  updateRefreshPeriod
+  updateRefreshPeriod,
+  updateTitle
 } from './actions';
 
 // eslint-disable-next-line no-magic-numbers
@@ -36,6 +37,13 @@ const reduce = createReducer({
       selectedTeamcityService: state.teamcityService,
       refreshPeriod: state.refreshPeriod,
       isInitialConfiguration
+    }
+  }),
+  [updateTitle]: (state, title) => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      title
     }
   }),
   [startedTeamcityServicesLoading]: state => ({
@@ -117,12 +125,28 @@ const reduce = createReducer({
   refreshPeriod: DEFAULT_PERIOD,
   configuration: {
     isConfiguring: false,
-    isLoadingServices: false,
-    teamcityServices: [],
-    serviceLoadErrorMessage: null,
-    selectedTeamcityService: null,
+    isInitialConfiguration: false,
+
+    title: '',
+
     refreshPeriod: null,
-    isInitialConfiguration: false
+
+    teamcityServices: [],
+    isLoadingServices: false,
+    selectedTeamcityService: null,
+
+    serviceLoadErrorMessage: null,
+    projects: [],
+    isLoadingProjects: false,
+    selectedProject: null,
+
+    projectLoadErrorMessage: null,
+    configurations: [],
+    isLoadingConfigurations: false,
+    selectedConfigurations: [],
+
+    showGreenBuilds: false,
+    hideChildProjects: false
   }
 });
 

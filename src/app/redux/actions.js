@@ -4,16 +4,46 @@ import TeamcityService from '../teamcity/teamcity-service';
 
 export const setInitialSettings = createAction('Set initial settings');
 export const openConfiguration = createAction('Open configuration mode');
-export const selectTeamcityService = createAction('Select TeamCity service');
 export const updateRefreshPeriod = createAction('Update refresh period');
+
+export const updateTitle = createAction('Update title');
+
 export const startedTeamcityServicesLoading =
   createAction('Started loading list of TeamCity services');
 export const finishedTeamcityServicesLoading =
   createAction('Finished loading list of TeamCity services');
 export const failedTeamcityServicesLoading =
   createAction('Failed to load list of TeamCity services');
+export const selectTeamcityService =
+  createAction('Select TeamCity service');
+
+export const startedProjectsLoading =
+  createAction('Started loading list of projects');
+export const finishedProjectsLoading =
+  createAction('Finished loading list of projects');
+export const failedProjectsLoading =
+  createAction('Failed to load list of projects');
+export const selectProject =
+  createAction('Select project');
+
+export const startedConfigurationsLoading =
+  createAction('Started loading list of configurations');
+export const finishedConfigurationsLoading =
+  createAction('Finished loading list of configurations');
+export const failedConfigurationsLoading =
+  createAction('Failed to load list of configurations');
+export const selectConfiguration =
+  createAction('Select configuration');
+
+export const toggleShowGreenBuilds =
+  createAction('Toggle show green builds checkbox');
+
+export const toggleHideChildProjects =
+  createAction('Toggle hide child projects');
+
 export const applyConfiguration = createAction('Apply configuration');
 export const closeConfiguration = createAction('Close configuration mode');
+
 export const startedInvestigationsLoading =
   createAction('Started loading list of investigations');
 export const finishedInvestigationsLoading =
