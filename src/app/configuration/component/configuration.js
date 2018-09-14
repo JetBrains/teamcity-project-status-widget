@@ -5,20 +5,12 @@ import classNames from 'classnames';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 import Checkbox from '@jetbrains/ring-ui/components/checkbox/checkbox';
 import ConfigurationForm from '@jetbrains/hub-widget-ui/dist/configuration-form';
-import RefreshPeriod from '@jetbrains/hub-widget-ui/dist/refresh-period';
 
 import styles from './configuration.css';
 
-const refreshLabel = minutes => i18n('{{minutes}} min', {minutes});
-const refreshTooltip = minutes => (minutes === 1
-  ? i18n('Widget refreshes every minute')
-  : i18n('Widget refreshes every {{minutes}} minutes', {minutes}, minutes));
-
 const Configuration = (
   {
-    refreshPeriod,
-    onRefreshPeriodUpdate,
-
+    refreshPeriodControl,
     titleInput,
     serviceSelect,
 
@@ -39,15 +31,7 @@ const Configuration = (
     cancelButtonLabel={i18n('Cancel')}
     onCancel={onCancel}
 
-    panelControls={[(
-      <RefreshPeriod
-        key="refresh"
-        seconds={refreshPeriod}
-        label={refreshLabel}
-        tooltip={refreshTooltip}
-        onChange={onRefreshPeriodUpdate}
-      />
-    )]}
+    panelControls={[refreshPeriodControl]}
   >
     {titleInput}
     {serviceSelect}
@@ -71,16 +55,9 @@ const Configuration = (
 );
 
 Configuration.propTypes = {
-  refreshPeriod: PropTypes.number.isRequired,
-  onRefreshPeriodUpdate: PropTypes.func.isRequired,
-
+  refreshPeriodControl: PropTypes.node.isRequired,
   titleInput: PropTypes.node.isRequired,
-
-  isLoadingServices: PropTypes.bool.isRequired,
-  selectedService: PropTypes.object,
-  serviceList: PropTypes.array,
-  serviceNotFoundMessage: PropTypes.string,
-  onServiceSelect: PropTypes.func.isRequired,
+  serviceSelect: PropTypes.node.isRequired,
 
   showGreenBuilds: PropTypes.bool.isRequired,
   onShowGreenBuildsChange: PropTypes.func.isRequired,
