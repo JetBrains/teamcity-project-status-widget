@@ -1,4 +1,4 @@
-@value unit, line-height, dark-gray-color from "@jetbrains/ring-ui/components/global/global.css";
+@value unit from "@jetbrains/ring-ui/components/global/global.css";
 
 .investigations {
   margin-top: 0;
@@ -9,7 +9,7 @@
 
   word-wrap: break-word;
 
-  line-height: line-height;
+  line-height: var(--ring-line-height);
 }
 
 .item {
@@ -27,7 +27,7 @@
 }
 
 .detailsTitle {
-  color: dark-gray-color;
+  color: var(--ring-secondary-color);
 }
 
 .hiddenOverflow {

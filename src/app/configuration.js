@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
-import Input from '@jetbrains/ring-ui/components/input/input';
+import Input, {Size as InputSize} from '@jetbrains/ring-ui/components/input/input';
 import Checkbox from '@jetbrains/ring-ui/components/checkbox/checkbox';
 import ConfigurationForm from '@jetbrains/hub-widget-ui/dist/configuration-form';
 import RefreshPeriod from '@jetbrains/hub-widget-ui/dist/refresh-period';
@@ -62,6 +63,7 @@ const Configuration = (
       data-test="widget-name-input"
       value={title}
       onChange={onTitleChange}
+      size={InputSize.AUTO}
     />
 
     <ServiceSelect
@@ -73,7 +75,7 @@ const Configuration = (
       onServiceSelect={onServiceSelect}
     />
 
-    <div className={styles.control}>
+    <div className={classNames(styles.control, styles.controlFirst)}>
       <Checkbox
         label={i18n('Show green builds')}
         checked={showGreenBuilds}
