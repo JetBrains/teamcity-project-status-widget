@@ -5,6 +5,8 @@ import Timer from '@jetbrains/hub-widget-ui/dist/timer';
 import ConfigurableWidget from '@jetbrains/hub-widget-ui/dist/configurable-widget';
 import WidgetLoader from '@jetbrains/hub-widget-ui/dist/widget-loader';
 
+import styles from './app.css';
+
 const Widget = (
   {
     isConfiguring,
@@ -17,7 +19,7 @@ const Widget = (
     Content
   }
 ) => (
-  <div>
+  <div className={styles.widget}>
     <Timer
       onTick={onRefresh}
       period={refreshPeriod}
