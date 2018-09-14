@@ -2,19 +2,31 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: youtrack-widgets\n"
+"Project-Id-Version: youtrackjetbrains\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: crowdin.com\n"
-"X-Crowdin-Project: youtrack-widgets\n"
+"X-Crowdin-Project: youtrackjetbrains\n"
 "X-Crowdin-Language: fr\n"
-"X-Crowdin-File: hub-project-team-widget.pot\n"
+"X-Crowdin-File: /widgets/teamcity-project-status-widget/default.pot\n"
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2018-09-06 13:40\n"
+"PO-Revision-Date: 2018-09-14 16:44\n"
 
-#: src/app/app.js:172
+#: src/app/investigation.js:41
+msgid "Build problems:"
+msgstr ""
+
+#: src/app/configuration/component/configuration.js:45
 msgid "Cancel"
+msgstr ""
+
+#: src/app/content.js:39
+msgid "Cannot load investigations"
+msgstr ""
+
+#: src/app/configuration/component/configuration.js:79
+msgid "Hide child projects"
 msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
@@ -25,12 +37,28 @@ msgstr ""
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr ""
 
-#: src/app/app.js:170
+#: src/app/content.js:49
+msgid "No investigations<br>are assigned to you"
+msgstr ""
+
+#: src/app/configuration/container/title-input-container.js:11
+msgid "Optional title"
+msgstr ""
+
+#: src/app/configuration/component/configuration.js:42
 msgid "Save"
 msgstr ""
 
-#: src/app/app.js:161
-msgid "Select a project"
+#: src/app/configuration/component/configuration.js:62
+msgid "Select service"
+msgstr ""
+
+#: src/app/content.js:31
+msgid "Set up..."
+msgstr ""
+
+#: src/app/configuration/component/configuration.js:71
+msgid "Show green builds"
 msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
@@ -41,11 +69,32 @@ msgstr ""
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr ""
 
+#: src/app/container/title-container.js:11
+#: src/app/container/title-container.js:17
+msgid "TeamCity Investigations"
+msgstr ""
+
+#: src/app/content.js:30
+msgid "TeamCity service is not configured yet."
+msgstr ""
+
+#: src/app/investigation.js:40
+msgid "Tests failed:"
+msgstr ""
+
+#: src/app/configuration/component/configuration.js:15
+msgid "Widget refreshes every minute"
+msgstr ""
+
+#: src/app/configuration/component/configuration.js:16
+msgid "Widget refreshes every {{minutes}} minutes"
+msgstr ""
+
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
 msgid "am|pm"
 msgstr ""
 
-#: src/app/app.js:203
-msgid "project owner"
+#: src/app/configuration/component/configuration.js:13
+msgid "{{minutes}} min"
 msgstr ""
 
