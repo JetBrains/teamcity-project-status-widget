@@ -1,86 +1,12 @@
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
-import {i18n} from 'hub-dashboard-addons/dist/localization';
-
-import WidgetTitle from '@jetbrains/hub-widget-ui/dist/widget-title';
-
 import Widget from '../widget';
-import Configuration from '../configuration';
-import Content from '../content';
+import {reloadInvestigations} from '../redux/actions';
 
-import {
-  cancelConfiguration,
-  reloadInvestigations,
-  saveConfiguration,
-  selectTeamcityService,
-  startConfiguration, updateHideChildProjects, updateShowGreenBuilds,
-  updateRefreshPeriod,
-  updateTitle
-} from '../redux/actions';
-
-const TitleContainer = connect(
-  (state, {dashboardApi}) => (state.configuration.isConfiguring
-    ? {
-      title: i18n('TeamCity Investigations'),
-      counter: -1,
-      href: null,
-      dashboardApi
-    }
-    : {
-      title: i18n('TeamCity Investigations'),
-      counter: state.investigationsCount,
-      href: state.teamcityService &&
-        state.teamcityService.homeUrl &&
-        `${state.teamcityService.homeUrl}/investigations.html`,
-      dashboardApi
-    })
-)(WidgetTitle);
-
-TitleContainer.propTypes = {
-  dashboardApi: PropTypes.object.isRequired
-};
-
-const ConfigurationContainer = connect(
-  state => ({
-    refreshPeriod: state.configuration.refreshPeriod,
-
-    title: state.configuration.title,
-
-    isLoadingServices: state.configuration.isLoadingServices,
-    selectedService: state.configuration.selectedTeamcityService,
-    serviceList: state.configuration.teamcityServices,
-    serviceNotFoundMessage: state.configuration.serviceLoadErrorMessage,
-
-    showGreenBuilds: state.configuration.showGreenBuilds,
-
-    hideChildProjects: state.configuration.hideChildProjects
-  }),
-  dispatch => ({
-    onRefreshPeriodUpdate: newSeconds => dispatch(updateRefreshPeriod(newSeconds)),
-    onServiceSelect: selectedItem => dispatch(selectTeamcityService(selectedItem.service)),
-    onTitleChange: event => dispatch(updateTitle(event.target.value)),
-    onShowGreenBuildsChange: event => dispatch(updateShowGreenBuilds(event.target.checked)),
-    onHideChildProjectsChange: event => dispatch(updateHideChildProjects(event.target.checked)),
-    onSave: () => dispatch(saveConfiguration()),
-    onCancel: () => dispatch(cancelConfiguration())
-  })
-)(Configuration);
-
-ConfigurationContainer.propTypes = {};
-
-const ContentContainer = connect(
-  state => ({
-    teamcityService: state.teamcityService,
-    investigations: state.investigations,
-    investigationLoadErrorMessage: state.investigationLoadErrorMessage
-  }),
-  dispatch => ({
-    onConfigure: () => dispatch(startConfiguration(false))
-  })
-)(Content);
-
-ContentContainer.propTypes = {};
+import TitleContainer from './title-container';
+import ConfigurationContainer from './configuration-container';
+import ContentContainer from './content-container';
 
 const WidgetContainer = connect(
   (state, {dashboardApi}) => ({
