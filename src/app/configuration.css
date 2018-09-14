@@ -1,0 +1,5 @@
+@value unit from "@jetbrains/ring-ui/components/global/global.css";
+
+.control {
+  padding-top: calc(unit * 3);
+}

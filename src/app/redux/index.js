@@ -13,8 +13,8 @@ import {
   selectTeamcityService,
   setInitialSettings,
   startedInvestigationsLoading,
-  startedTeamcityServicesLoading,
-  updateRefreshPeriod,
+  startedTeamcityServicesLoading, updateHideChildProjects,
+  updateRefreshPeriod, updateShowGreenBuilds,
   updateTitle
 } from './actions';
 
@@ -77,6 +77,20 @@ const reduce = createReducer({
     configuration: {
       ...state.configuration,
       selectedTeamcityService: selectedService
+    }
+  }),
+  [updateShowGreenBuilds]: (state, showGreenBuilds) => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      showGreenBuilds
+    }
+  }),
+  [updateHideChildProjects]: (state, hideChildProjects) => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      hideChildProjects
     }
   }),
   [updateRefreshPeriod]: (state, refreshPeriod) => ({

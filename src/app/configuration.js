@@ -4,9 +4,12 @@ import PropTypes from 'prop-types';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import Input from '@jetbrains/ring-ui/components/input/input';
+import Checkbox from '@jetbrains/ring-ui/components/checkbox/checkbox';
 import ConfigurationForm from '@jetbrains/hub-widget-ui/dist/configuration-form';
 import RefreshPeriod from '@jetbrains/hub-widget-ui/dist/refresh-period';
 import ServiceSelect from '@jetbrains/hub-widget-ui/dist/service-select';
+
+import styles from './configuration.css';
 
 const refreshLabel = minutes => i18n('{{minutes}} min', {minutes});
 const refreshTooltip = minutes => (minutes === 1
@@ -26,6 +29,12 @@ const Configuration = (
     serviceList,
     serviceNotFoundMessage,
     onServiceSelect,
+
+    showGreenBuilds,
+    onShowGreenBuildsChange,
+
+    hideChildProjects,
+    onHideChildProjectsChange,
 
     onSave,
     onCancel
@@ -63,6 +72,22 @@ const Configuration = (
       loadError={serviceNotFoundMessage}
       onServiceSelect={onServiceSelect}
     />
+
+    <div className={styles.control}>
+      <Checkbox
+        label={i18n('Show green builds')}
+        checked={showGreenBuilds}
+        onChange={onShowGreenBuildsChange}
+      />
+    </div>
+
+    <div className={styles.control}>
+      <Checkbox
+        label={i18n('Hide child projects')}
+        checked={hideChildProjects}
+        onChange={onHideChildProjectsChange}
+      />
+    </div>
   </ConfigurationForm>
 );
 
@@ -78,6 +103,12 @@ Configuration.propTypes = {
   serviceList: PropTypes.array,
   serviceNotFoundMessage: PropTypes.string,
   onServiceSelect: PropTypes.func.isRequired,
+
+  showGreenBuilds: PropTypes.bool.isRequired,
+  onShowGreenBuildsChange: PropTypes.func.isRequired,
+
+  hideChildProjects: PropTypes.bool.isRequired,
+  onHideChildProjectsChange: PropTypes.func.isRequired,
 
   onSave: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired

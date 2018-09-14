@@ -1,4 +1,4 @@
-module.exports = () => ({
+module.exports = ctx => ({
   plugins: [
     require('postcss-import')({}),
     require('postcss-modules-values-replace')({}),
@@ -7,7 +7,10 @@ module.exports = () => ({
         calc: {
           mediaQueries: true
         },
-        customProperties: false
+        customProperties: {
+          preserve: true,
+          variables: ctx.options.variables
+        }
       }
     })
   ]

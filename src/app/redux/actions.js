@@ -35,10 +35,10 @@ export const failedConfigurationsLoading =
 export const selectConfiguration =
   createAction('Select configuration');
 
-export const toggleShowGreenBuilds =
+export const updateShowGreenBuilds =
   createAction('Toggle show green builds checkbox');
 
-export const toggleHideChildProjects =
+export const updateHideChildProjects =
   createAction('Toggle hide child projects');
 
 export const applyConfiguration = createAction('Apply configuration');

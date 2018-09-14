@@ -45,7 +45,14 @@ const webpackConfig = () => ({
               localIdentName: '[name]__[local]__[hash:base64:7]'
             }
           },
-          'postcss-loader'
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                ctx: {variables: require('@jetbrains/ring-ui/extract-css-vars')}
+              }
+            }
+          }
         ]
       },
       {
