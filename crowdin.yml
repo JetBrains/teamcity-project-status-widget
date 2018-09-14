@@ -7,7 +7,7 @@
 files: [
  {
   "source" : "/src/app/translations/default.pot",
-  "dest": "/teamcity-project-status-widget/default.pot",
-  "translation" : "/src/app/translations/teamcity-project-status-widget_%two_letters_code%.po",
+  "dest": "/widgets/teamcity-project-status-widget/default.pot",
+  "translation": "/src/app/translations/teamcity-project-status-widget_%two_letters_code%.po"
  }
 ]
