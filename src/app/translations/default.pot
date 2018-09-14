@@ -8,12 +8,16 @@ msgstr ""
 msgid "Build problems:"
 msgstr ""
 
-#: src/app/configuration.js:26
+#: src/app/configuration/component/configuration.js:45
 msgid "Cancel"
 msgstr ""
 
 #: src/app/content.js:39
 msgid "Cannot load investigations"
+msgstr ""
+
+#: src/app/configuration/component/configuration.js:79
+msgid "Hide child projects"
 msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
@@ -25,15 +29,27 @@ msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr ""
 
 #: src/app/content.js:49
-msgid "No investigations {{areAssignedToYou}}"
+msgid "No investigations<br>are assigned to you"
 msgstr ""
 
-#: src/app/configuration.js:23
+#: src/app/configuration/container/title-input-container.js:11
+msgid "Optional title"
+msgstr ""
+
+#: src/app/configuration/component/configuration.js:42
 msgid "Save"
 msgstr ""
 
-#: src/app/service-select.js:18
+#: src/app/configuration/component/configuration.js:62
 msgid "Select service"
+msgstr ""
+
+#: src/app/content.js:31
+msgid "Set up..."
+msgstr ""
+
+#: src/app/configuration/component/configuration.js:71
+msgid "Show green builds"
 msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
@@ -44,34 +60,31 @@ msgstr ""
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr ""
 
+#: src/app/container/title-container.js:11
+#: src/app/container/title-container.js:17
+msgid "TeamCity Investigations"
+msgstr ""
+
 #: src/app/content.js:30
-msgid "TeamCity service to get investigations from, it not configuration yet. Please,"
+msgid "TeamCity service is not configured yet."
 msgstr ""
 
 #: src/app/investigation.js:40
 msgid "Tests failed:"
 msgstr ""
 
-#: src/app/refresh-period.js:34
+#: src/app/configuration/component/configuration.js:15
 msgid "Widget refreshes every minute"
 msgstr ""
 
-#: src/app/refresh-period.js:35
-msgid "Widget refreshes every {{minutesCount}} minutes"
+#: src/app/configuration/component/configuration.js:16
+msgid "Widget refreshes every {{minutes}} minutes"
 msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
 msgid "am|pm"
 msgstr ""
 
-#: src/app/content.js:31
-msgid "select the service."
-msgstr ""
-
-#: src/app/refresh-period.js:40
-msgid "{{minutesCount}} min"
-msgstr ""
-
-#: src/app/content.js:51
-msgid "{{noInvestigations}} are assigned to you"
+#: src/app/configuration/component/configuration.js:13
+msgid "{{minutes}} min"
 msgstr ""
