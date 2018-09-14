@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import {i18n} from 'hub-dashboard-addons/dist/localization';
-
-import Input, {Size as InputSize} from '@jetbrains/ring-ui/components/input/input';
 import Checkbox from '@jetbrains/ring-ui/components/checkbox/checkbox';
 import ConfigurationForm from '@jetbrains/hub-widget-ui/dist/configuration-form';
 import RefreshPeriod from '@jetbrains/hub-widget-ui/dist/refresh-period';
@@ -22,8 +20,7 @@ const Configuration = (
     refreshPeriod,
     onRefreshPeriodUpdate,
 
-    title,
-    onTitleChange,
+    titleInput,
 
     isLoadingServices,
     selectedService,
@@ -58,13 +55,7 @@ const Configuration = (
       />
     )]}
   >
-    <Input
-      label={i18n('Optional title')}
-      data-test="widget-name-input"
-      value={title}
-      onChange={onTitleChange}
-      size={InputSize.AUTO}
-    />
+    {titleInput}
 
     <ServiceSelect
       isLoading={isLoadingServices}
@@ -97,8 +88,7 @@ Configuration.propTypes = {
   refreshPeriod: PropTypes.number.isRequired,
   onRefreshPeriodUpdate: PropTypes.func.isRequired,
 
-  title: PropTypes.string,
-  onTitleChange: PropTypes.func.isRequired,
+  titleInput: PropTypes.node.isRequired,
 
   isLoadingServices: PropTypes.bool.isRequired,
   selectedService: PropTypes.object,

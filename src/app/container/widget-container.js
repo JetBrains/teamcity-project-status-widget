@@ -5,7 +5,7 @@ import Widget from '../widget';
 import {reloadInvestigations} from '../redux/actions';
 
 import TitleContainer from './title-container';
-import ConfigurationContainer from './configuration-container';
+import ConfigurationContainer from '../configuration/container/configuration-container';
 import ContentContainer from './content-container';
 
 const WidgetContainer = connect(

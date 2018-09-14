@@ -1,23 +1,24 @@
+import React from 'react';
 import {connect} from 'react-redux';
 
-import Configuration from '../configuration';
-
+import Configuration from '../component/configuration';
 import {
   cancelConfiguration,
   saveConfiguration,
   selectTeamcityService,
   updateHideChildProjects,
   updateRefreshPeriod,
-  updateShowGreenBuilds,
-  updateTitle
-} from '../redux/actions';
+  updateShowGreenBuilds
+} from '../../redux/actions';
+
+import TitleInputContainer from './title-input-container';
 
 
 const ConfigurationContainer = connect(
   state => ({
     refreshPeriod: state.configuration.refreshPeriod,
 
-    title: state.configuration.title,
+    titleInput: <TitleInputContainer/>,
 
     isLoadingServices: state.configuration.isLoadingServices,
     selectedService: state.configuration.selectedTeamcityService,
@@ -31,7 +32,6 @@ const ConfigurationContainer = connect(
   dispatch => ({
     onRefreshPeriodUpdate: newSeconds => dispatch(updateRefreshPeriod(newSeconds)),
     onServiceSelect: selectedItem => dispatch(selectTeamcityService(selectedItem.service)),
-    onTitleChange: event => dispatch(updateTitle(event.target.value)),
     onShowGreenBuildsChange: event => dispatch(updateShowGreenBuilds(event.target.checked)),
     onHideChildProjectsChange: event => dispatch(updateHideChildProjects(event.target.checked)),
     onSave: () => dispatch(saveConfiguration()),
