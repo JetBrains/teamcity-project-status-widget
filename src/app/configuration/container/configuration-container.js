@@ -12,6 +12,7 @@ import {
 import TitleInputContainer from './title-input-container';
 import ServiceSelectContainer from './service-select-container';
 import RefreshPeriodContainer from './refresh-period-container';
+import ProjectSelectContainer from './project-select-container';
 
 
 const ConfigurationContainer = connect(
@@ -19,6 +20,7 @@ const ConfigurationContainer = connect(
     refreshPeriodControl: <RefreshPeriodContainer/>,
     titleInput: <TitleInputContainer/>,
     serviceSelect: <ServiceSelectContainer/>,
+    projectSelect: <ProjectSelectContainer/>,
 
     showGreenBuilds: state.configuration.showGreenBuilds,
 

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Select from '@jetbrains/ring-ui/components/select/select';
 import {MinWidth} from '@jetbrains/ring-ui/components/popup/position';
+import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 const project2Item = project => project && {
   key: project.id,
@@ -37,9 +38,9 @@ const filter = {
 };
 
 const ProjectSelect =
-  ({isLoading, placeholder, selectedProject, projectList, loadError, onProjectSelect}) => (
+  ({isLoading, selectedProject, projectList, loadError, onProjectSelect}) => (
     <Select
-      label={placeholder || 'Select service'}
+      label={i18n('Select project')}
       multiple={false}
       loading={isLoading}
       filter={filter}
@@ -60,7 +61,6 @@ const PROJECT_PROPS = {
 
 ProjectSelect.propTypes = {
   isLoading: PropTypes.bool,
-  placeholder: PropTypes.string,
   selectedProject: PropTypes.shape(PROJECT_PROPS),
   projectList: PropTypes.arrayOf(PropTypes.shape(PROJECT_PROPS)),
   loadError: PropTypes.string,

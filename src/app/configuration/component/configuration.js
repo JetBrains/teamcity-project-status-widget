@@ -13,6 +13,7 @@ const Configuration = (
     refreshPeriodControl,
     titleInput,
     serviceSelect,
+    projectSelect,
 
     showGreenBuilds,
     onShowGreenBuildsChange,
@@ -35,6 +36,7 @@ const Configuration = (
   >
     {titleInput}
     {serviceSelect}
+    {projectSelect}
 
     <div className={classNames(styles.control, styles.controlFirst)}>
       <Checkbox
@@ -58,6 +60,7 @@ Configuration.propTypes = {
   refreshPeriodControl: PropTypes.node.isRequired,
   titleInput: PropTypes.node.isRequired,
   serviceSelect: PropTypes.node.isRequired,
+  projectSelect: PropTypes.node.isRequired,
 
   showGreenBuilds: PropTypes.bool.isRequired,
   onShowGreenBuildsChange: PropTypes.func.isRequired,

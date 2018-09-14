@@ -148,16 +148,17 @@ const reduce = createReducer({
     teamcityServices: [],
     isLoadingServices: false,
     selectedTeamcityService: null,
-
     serviceLoadErrorMessage: null,
+
     projects: [],
     isLoadingProjects: false,
     selectedProject: null,
-
     projectLoadErrorMessage: null,
+
     configurations: [],
     isLoadingConfigurations: false,
     selectedConfigurations: [],
+    configurationLoadErrorMessage: null,
 
     showGreenBuilds: false,
     hideChildProjects: false
