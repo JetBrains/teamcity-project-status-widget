@@ -6,7 +6,6 @@ import {i18n} from 'hub-dashboard-addons/dist/localization';
 import Checkbox from '@jetbrains/ring-ui/components/checkbox/checkbox';
 import ConfigurationForm from '@jetbrains/hub-widget-ui/dist/configuration-form';
 import RefreshPeriod from '@jetbrains/hub-widget-ui/dist/refresh-period';
-import ServiceSelect from '@jetbrains/hub-widget-ui/dist/service-select';
 
 import styles from './configuration.css';
 
@@ -21,12 +20,7 @@ const Configuration = (
     onRefreshPeriodUpdate,
 
     titleInput,
-
-    isLoadingServices,
-    selectedService,
-    serviceList,
-    serviceNotFoundMessage,
-    onServiceSelect,
+    serviceSelect,
 
     showGreenBuilds,
     onShowGreenBuildsChange,
@@ -56,15 +50,7 @@ const Configuration = (
     )]}
   >
     {titleInput}
-
-    <ServiceSelect
-      isLoading={isLoadingServices}
-      placeholder={i18n('Select service')}
-      selectedService={selectedService}
-      serviceList={serviceList}
-      loadError={serviceNotFoundMessage}
-      onServiceSelect={onServiceSelect}
-    />
+    {serviceSelect}
 
     <div className={classNames(styles.control, styles.controlFirst)}>
       <Checkbox

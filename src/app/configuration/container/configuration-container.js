@@ -5,13 +5,13 @@ import Configuration from '../component/configuration';
 import {
   cancelConfiguration,
   saveConfiguration,
-  selectTeamcityService,
   updateHideChildProjects,
   updateRefreshPeriod,
   updateShowGreenBuilds
 } from '../../redux/actions';
 
 import TitleInputContainer from './title-input-container';
+import ServiceSelectContainer from './service-select-container';
 
 
 const ConfigurationContainer = connect(
@@ -19,6 +19,7 @@ const ConfigurationContainer = connect(
     refreshPeriod: state.configuration.refreshPeriod,
 
     titleInput: <TitleInputContainer/>,
+    serviceSelect: <ServiceSelectContainer/>,
 
     isLoadingServices: state.configuration.isLoadingServices,
     selectedService: state.configuration.selectedTeamcityService,
@@ -31,7 +32,6 @@ const ConfigurationContainer = connect(
   }),
   dispatch => ({
     onRefreshPeriodUpdate: newSeconds => dispatch(updateRefreshPeriod(newSeconds)),
-    onServiceSelect: selectedItem => dispatch(selectTeamcityService(selectedItem.service)),
     onShowGreenBuildsChange: event => dispatch(updateShowGreenBuilds(event.target.checked)),
     onHideChildProjectsChange: event => dispatch(updateHideChildProjects(event.target.checked)),
     onSave: () => dispatch(saveConfiguration()),
