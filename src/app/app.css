@@ -8,8 +8,9 @@
 
   background: var(--ring-content-background-color);
 
-  font-size: var(--ring-font-size);
   font-family: var(--ring-font-family);
+
+  font-size: var(--ring-font-size);
 }
 
 .widget {
