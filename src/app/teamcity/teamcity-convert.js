@@ -1,3 +1,93 @@
+/**
+ * @typedef {object} TeamcityProject
+ * @property {string} id - project ID
+ * @property {string} name - project name
+ * @property {?string} parentProjectId - ID of a parent project
+ * @property {boolean} archived - is project archived
+ * @property {number} level - project nesting level
+ * @property {?TeamcityProject[]} children - sub-projects
+ */
+
+/**
+ * @param {TeamcityProject[]} projects - projects to filter
+ * @returns {TeamcityProject[]} - projects except archived
+ */
+function filterNotArchived(projects) {
+  return projects.filter(project => !project.archived);
+}
+
+/**
+ * Build a map of project ID to project
+ *
+ * @param {TeamcityProject[]} projects — projects to build a map for
+ * @returns {object} — project ID to project map
+ */
+function projectsAsMap(projects) {
+  const projectMap = {};
+  projects.forEach(project => (projectMap[project.id] = project));
+  return projectMap;
+}
+
+/**
+ * Converts TeamCity projects response to a tree of TeamCity projects.
+ *
+ * @param {{project: TeamcityProject[]}} projectResponse - TeamCity project response
+ * @return {TeamcityProject[]} tree presentation of TeamCity projects
+ */
+function asProjectTree(projectResponse) {
+  const projects = filterNotArchived(projectResponse.project || []);
+  const projectMap = projectsAsMap(projects);
+
+  // Build a forest of projects
+  const roots = [];
+  projects.forEach(project => {
+    const parent = projectMap[project.parentProjectId];
+    if (parent) {
+      const children = parent.children || [];
+      children.push(project);
+      parent.children = children;
+    } else {
+      roots.push(project);
+    }
+  });
+
+  return roots;
+}
+
+/**
+ * Converts TeamCity projects response to a list of TeamCity projects with levels.
+ *
+ * @param {{project: TeamcityProject[]}} projectResponse - TeamCity project response
+ * @return {TeamcityProject[]} flatten tree presentation of TeamCity projects
+ */
+export function asFlattenProjectTree(projectResponse) {
+  const roots = asProjectTree(projectResponse);
+
+  const flattenProjects = [];
+  let currentLevel = 0;
+
+  /**
+   * Flattens project tree
+   *
+   * @param {TeamcityProject} node - project to flatten
+   * @returns {undefined}
+   */
+  function flattenTree(node) {
+    node.level = currentLevel;
+    flattenProjects.push(node);
+    if (node.children) {
+      currentLevel++;
+      node.children.forEach(flattenTree);
+      currentLevel--;
+    }
+  }
+
+  roots.forEach(flattenTree);
+
+  return flattenProjects;
+}
+
+
 function investigationToItem(investigation) {
   let item;
   if (investigation.scope.buildTypes) {

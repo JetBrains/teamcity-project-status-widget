@@ -5,9 +5,9 @@ import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import WidgetTitle from '@jetbrains/hub-widget-ui/dist/widget-title';
 
-import Widget from './widget';
-import Configuration from './configuration';
-import Content from './content';
+import Widget from '../widget';
+import Configuration from '../configuration';
+import Content from '../content';
 
 import {
   cancelConfiguration,
@@ -17,7 +17,7 @@ import {
   startConfiguration, updateHideChildProjects, updateShowGreenBuilds,
   updateRefreshPeriod,
   updateTitle
-} from './redux/actions';
+} from '../redux/actions';
 
 const TitleContainer = connect(
   (state, {dashboardApi}) => (state.configuration.isConfiguring

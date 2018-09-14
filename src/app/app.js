@@ -8,7 +8,7 @@ import {render} from 'react-dom';
 import 'file-loader?name=[name].[ext]!../../manifest.json'; // eslint-disable-line import/no-unresolved
 import createStore from './redux/index';
 import {initWidget} from './redux/actions';
-import WidgetContainer from './widget-container';
+import WidgetContainer from './container/widget-container';
 import TRANSLATIONS from './translations';
 
 DashboardAddons.registerWidget((dashboardApi, registerWidgetApi) => {
