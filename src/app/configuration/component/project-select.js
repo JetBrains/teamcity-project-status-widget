@@ -50,12 +50,13 @@ const filter = {
 };
 
 const ProjectSelect =
-  ({isLoading, selectedProject, projectList, loadError, onProjectSelect, onOpen}) => (
+  ({isLoading, isDisabled, selectedProject, projectList, loadError, onProjectSelect, onOpen}) => (
     <Select
       selectedLabel={i18n('Project')}
       label={i18n('Select project')}
       multiple={false}
       loading={isLoading}
+      disabled={isDisabled}
       filter={filter}
       selected={project2Selected(selectedProject)}
       size={Select.Size.FULL}
@@ -77,6 +78,7 @@ const PROJECT_PROPS = {
 
 ProjectSelect.propTypes = {
   isLoading: PropTypes.bool,
+  isDisabled: PropTypes.bool,
   selectedProject: PropTypes.shape(PROJECT_PROPS),
   projectList: PropTypes.arrayOf(PropTypes.shape(PROJECT_PROPS)),
   loadError: PropTypes.string,
