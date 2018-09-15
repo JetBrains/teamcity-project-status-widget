@@ -2,7 +2,7 @@
  * @typedef {object} TeamcityProject
  * @property {string} id - project ID
  * @property {string} name - project name
- * @property {function():string} getPath - returns project path
+ * @property {string} path - returns project path
  * @property {?string} parentProjectId - ID of a parent project
  * @property {?TeamcityProject} parent - parent project
  * @property {boolean} archived - is project archived
@@ -33,14 +33,12 @@ function projectsAsMap(projects) {
 /**
  * Returns project path
  *
- * @this {TeamcityProject}
+ * @param {TeamcityProject} project - project to build path for
  * @return {string} - project path
  */
-function getPath() {
+function getPath(project) {
   const path = [];
-  /*eslint consistent-this: ["error", "self"]*/
-  const self = this;
-  for (let cur = self; cur != null; cur = cur.parent) {
+  for (let cur = project; cur != null; cur = cur.parent) {
     path.unshift(cur.name);
   }
   return path.join(' :: ');
@@ -68,7 +66,10 @@ function asProjectTree(projectResponse) {
     } else {
       roots.push(project);
     }
-    project.getPath = getPath;
+  });
+
+  projects.forEach(project => {
+    project.path = getPath(project);
   });
 
   return roots;

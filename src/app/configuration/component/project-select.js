@@ -17,7 +17,7 @@ function project2Item(project) {
 function project2Selected(project) {
   return project && {
     key: project.id,
-    label: project.getPath()
+    label: project.path
   };
 }
 
@@ -29,7 +29,7 @@ function project2Selected(project) {
  * @returns {boolean} — if the project matches the query
  */
 function isMatching(project, query) {
-  return !query || query === '' || project.getPath().toLowerCase().includes(query.toLowerCase());
+  return !query || query === '' || project.path.toLowerCase().includes(query.toLowerCase());
 }
 
 /**
@@ -71,7 +71,7 @@ const ProjectSelect =
 const PROJECT_PROPS = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  getPath: PropTypes.func.isRequired,
+  path: PropTypes.string.isRequired,
   level: PropTypes.number,
   parent: PropTypes.object
 };

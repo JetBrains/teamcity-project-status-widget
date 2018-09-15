@@ -40,8 +40,13 @@ const reduce = createReducer({
     configuration: {
       ...state.configuration,
       isConfiguring: true,
-      selectedTeamcityService: state.teamcityService,
+      title: state.title,
       refreshPeriod: state.refreshPeriod,
+      selectedTeamcityService: state.teamcityService,
+      selectedProject: state.project,
+      showGreenBuilds: state.showGreenBuilds,
+      hideChildProjects: state.hideChildProjects,
+
       isInitialConfiguration
     }
   }),
@@ -140,8 +145,12 @@ const reduce = createReducer({
   }),
   [applyConfiguration]: state => ({
     ...state,
+    refreshPeriod: state.configuration.refreshPeriod,
+    title: state.configuration.title,
     teamcityService: state.configuration.selectedTeamcityService,
-    refreshPeriod: state.configuration.refreshPeriod
+    project: state.configuration.selectedProject,
+    showGreenBuilds: state.configuration.showGreenBuilds,
+    hideChildProjects: state.configuration.hideChildProjects
   }),
   [closeConfiguration]: state => ({
     ...state,
@@ -170,10 +179,15 @@ const reduce = createReducer({
   })
 }, {
   teamcityService: {},
+  project: null,
+  showGreenBuilds: false,
+  hideChildProjects: false,
+
   investigations: [],
   isLoadingInvestigations: false,
   investigationLoadErrorMessage: null,
   investigationsCount: -1,
+  title: null,
   refreshPeriod: DEFAULT_PERIOD,
   configuration: {
     isConfiguring: false,
