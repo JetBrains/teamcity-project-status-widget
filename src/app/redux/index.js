@@ -6,15 +6,21 @@ import {
   applyConfiguration,
   closeConfiguration,
   failedInvestigationsLoading,
+  failedProjectsLoading,
   failedTeamcityServicesLoading,
   finishedInvestigationsLoading,
+  finishedProjectsLoading,
   finishedTeamcityServicesLoading,
   openConfiguration,
+  selectProject,
   selectTeamcityService,
   setInitialSettings,
   startedInvestigationsLoading,
-  startedTeamcityServicesLoading, updateHideChildProjects,
-  updateRefreshPeriod, updateShowGreenBuilds,
+  startedProjectsLoading,
+  startedTeamcityServicesLoading,
+  updateHideChildProjects,
+  updateRefreshPeriod,
+  updateShowGreenBuilds,
   updateTitle
 } from './actions';
 
@@ -77,6 +83,38 @@ const reduce = createReducer({
     configuration: {
       ...state.configuration,
       selectedTeamcityService: selectedService
+    }
+  }),
+  [startedProjectsLoading]: state => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      isLoadingProjects: true
+    }
+  }),
+  [finishedProjectsLoading]: (state, projects) => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      isLoadingProjects: false,
+      projects,
+      projectLoadErrorMessage: null
+    }
+  }),
+  [failedProjectsLoading]: (state, projectLoadErrorMessage) => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      isLoadingProjects: false,
+      projects: [],
+      projectLoadErrorMessage
+    }
+  }),
+  [selectProject]: (state, selectedProject) => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      selectedProject
     }
   }),
   [updateShowGreenBuilds]: (state, showGreenBuilds) => ({

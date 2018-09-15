@@ -35,8 +35,14 @@ const Configuration = (
     panelControls={[refreshPeriodControl]}
   >
     {titleInput}
-    {serviceSelect}
-    {projectSelect}
+
+    <div className={styles.container}>
+      {serviceSelect}
+    </div>
+
+    <div className={styles.container}>
+      {projectSelect}
+    </div>
 
     <div className={classNames(styles.control, styles.controlFirst)}>
       <Checkbox

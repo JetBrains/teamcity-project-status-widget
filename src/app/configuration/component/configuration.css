@@ -7,3 +7,10 @@
 .controlFirst {
   padding-top: calc(unit * 2);
 }
+
+.container {
+  box-sizing: border-box;
+
+  min-height: calc(unit * 8);
+  padding-top: calc(unit * 2);
+}

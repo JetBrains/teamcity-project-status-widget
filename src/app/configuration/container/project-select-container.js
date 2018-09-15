@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 
 import ProjectSelect from '../component/project-select';
-import {selectProject} from '../../redux/actions';
+import {loadProjects, selectProject} from '../../redux/actions';
 
 const ProjectSelectContainer = connect(
   ({configuration}) => ({
@@ -11,7 +11,8 @@ const ProjectSelectContainer = connect(
     loadError: configuration.projectLoadErrorMessage
   }),
   dispatch => ({
-    onProjectSelect: item => dispatch(selectProject(item.project))
+    onProjectSelect: item => dispatch(selectProject(item.project)),
+    onOpen: () => dispatch(loadProjects())
   })
 )(ProjectSelect);
 

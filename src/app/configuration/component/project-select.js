@@ -4,11 +4,22 @@ import Select from '@jetbrains/ring-ui/components/select/select';
 import {MinWidth} from '@jetbrains/ring-ui/components/popup/position';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
-const project2Item = project => project && {
-  key: project.id,
-  label: project.name,
-  project
-};
+function project2Item(project) {
+  return project && {
+    key: project.id,
+    label: project.name,
+    // eslint-disable-next-line no-magic-numbers
+    level: project.level * 2,
+    project
+  };
+}
+
+function project2Selected(project) {
+  return project && {
+    key: project.id,
+    label: project.getPath()
+  };
+}
 
 /**
  * Checks if the project matches the query
@@ -18,7 +29,7 @@ const project2Item = project => project && {
  * @returns {boolean} — if the project matches the query
  */
 function isMatching(project, query) {
-  return !query || query === '' || project.name.toLowerCase().includes(query.toLowerCase());
+  return !query || query === '' || project.getPath().toLowerCase().includes(query.toLowerCase());
 }
 
 /**
@@ -34,29 +45,34 @@ function anyIsMatching(projects, query) {
 }
 
 const filter = {
-  fn: ({project}, query) => !query || anyIsMatching([project], query)
+  placeholder: i18n('Filter projects'),
+  fn: ({project}, query) => !query || anyIsMatching([project], query.replace(/\s*((::\s*)|(:$))/g, ' :: '))
 };
 
 const ProjectSelect =
-  ({isLoading, selectedProject, projectList, loadError, onProjectSelect}) => (
+  ({isLoading, selectedProject, projectList, loadError, onProjectSelect, onOpen}) => (
     <Select
+      selectedLabel={i18n('Project')}
       label={i18n('Select project')}
       multiple={false}
       loading={isLoading}
       filter={filter}
-      selected={project2Item(selectedProject)}
+      selected={project2Selected(selectedProject)}
       size={Select.Size.FULL}
       minWidth={MinWidth.TARGET}
       data={(projectList || []).map(project2Item)}
       notFoundMessage={loadError}
       onSelect={onProjectSelect}
+      onOpen={onOpen}
     />
   );
 
 const PROJECT_PROPS = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  level: PropTypes.number
+  getPath: PropTypes.func.isRequired,
+  level: PropTypes.number,
+  parent: PropTypes.object
 };
 
 ProjectSelect.propTypes = {
@@ -64,7 +80,8 @@ ProjectSelect.propTypes = {
   selectedProject: PropTypes.shape(PROJECT_PROPS),
   projectList: PropTypes.arrayOf(PropTypes.shape(PROJECT_PROPS)),
   loadError: PropTypes.string,
-  onProjectSelect: PropTypes.func.isRequired
+  onProjectSelect: PropTypes.func.isRequired,
+  onOpen: PropTypes.func.isRequired
 };
 
 export default ProjectSelect;

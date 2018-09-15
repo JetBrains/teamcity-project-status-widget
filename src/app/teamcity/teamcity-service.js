@@ -10,28 +10,20 @@ export default class TeamcityService {
 
   async getProjects(teamcityService) {
     return await this._fetchTeamcity(teamcityService, 'projects', {
-      fields: this.recursiveConvertHash({
-        project: ['id', 'name', 'parentProjectId', 'archived']
-      })
+      fields: 'project(id,name,parentProjectId,archived)'
     });
   }
 
   async getBuildTypes(teamcityService) {
     return await this._fetchTeamcity(teamcityService, 'buildTypes', {
-      fields: this.recursiveConvertHash({
-        buildType: ['id', 'name', 'projectId']
-      })
+      fields: 'buildType(id,name,projectId)'
     });
   }
 
   async getBuildTypesOfProject(teamcityService, projectId) {
     return await this._fetchTeamcity(teamcityService, 'buildTypes', {
-      locator: this.recursiveConvertHash({
-        affectedProject: {id: projectId}
-      }),
-      fields: this.recursiveConvertHash({
-        buildType: ['id', 'name', 'projectId']
-      })
+      locator: `affectedProject:(id:${projectId})`,
+      fields: 'buildType(id,name,projectId)'
     });
   }
 
@@ -48,7 +40,7 @@ export default class TeamcityService {
       `app/rest/${API_VER}/investigations`,
       {
         query: {
-          locator: this.recursiveConvertHash(locator)
+          locator
         },
         headers: {
           'Content-Type': 'application/json',
@@ -62,19 +54,7 @@ export default class TeamcityService {
    * @deprecated
    */
   async getMyInvestigations(teamcityService) {
-    return await this.getInvestigations(teamcityService, {
-      state: 'TAKEN',
-      assignee: 'current'
-    });
-  }
-
-  /**
-   * @deprecated
-   */
-  async getProjectInvestigations(teamcityService, projectId) {
-    return await this.getInvestigations(teamcityService, {
-      affectedProject: {id: projectId}
-    });
+    return await this.getInvestigations(teamcityService, 'state:TAKEN,assignee:current');
   }
 
   async _fetchTeamcity(teamcityService, path, query) {
@@ -89,16 +69,4 @@ export default class TeamcityService {
         }
       });
   }
-
-  recursiveConvertHash = input => Object.entries(input).map(([key, val]) => {
-    if (!val) {
-      return null;
-    } else if (typeof val === 'object') {
-      return `${key}(${this.recursiveConvertHash(val)})`;
-    } else if (Array.isArray(val)) {
-      return `${key}(${val.map(this.recursiveConvertHash).join(',')})`;
-    } else {
-      return `${key}:${val}`;
-    }
-  }).filter(it => it).join(',')
 }

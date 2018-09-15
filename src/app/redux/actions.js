@@ -1,6 +1,7 @@
 import {createAction} from 'redux-act';
 
 import TeamcityService from '../teamcity/teamcity-service';
+import {asFlattenProjectTree} from '../teamcity/teamcity-convert';
 
 export const setInitialSettings = createAction('Set initial settings');
 export const openConfiguration = createAction('Open configuration mode');
@@ -89,6 +90,22 @@ export const loadTeamCityServices = () => async (dispatch, getState, {dashboardA
     const error = (e.data && e.data.message) || e.message || e.toString();
     const message = `Cannot load list of TeamCity services: ${error}`;
     await dispatch(failedTeamcityServicesLoading(message));
+  }
+};
+
+export const loadProjects = () => async (dispatch, getState, {dashboardApi}) => {
+  const {configuration: {selectedTeamcityService}} = getState();
+  if (selectedTeamcityService) {
+    await dispatch(startedProjectsLoading());
+    try {
+      const teamcityService = new TeamcityService(dashboardApi);
+      const projectsResponse = await teamcityService.getProjects(selectedTeamcityService);
+      await dispatch(finishedProjectsLoading(asFlattenProjectTree(projectsResponse)));
+    } catch (e) {
+      const error = (e.data && e.data.message) || e.message || e.toString();
+      const message = `Cannot load list of TeamCity projects: ${error}`;
+      await dispatch(failedProjectsLoading(message));
+    }
   }
 };
 

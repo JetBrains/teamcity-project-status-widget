@@ -2,7 +2,9 @@
  * @typedef {object} TeamcityProject
  * @property {string} id - project ID
  * @property {string} name - project name
+ * @property {function():string} getPath - returns project path
  * @property {?string} parentProjectId - ID of a parent project
+ * @property {?TeamcityProject} parent - parent project
  * @property {boolean} archived - is project archived
  * @property {number} level - project nesting level
  * @property {?TeamcityProject[]} children - sub-projects
@@ -12,8 +14,8 @@
  * @param {TeamcityProject[]} projects - projects to filter
  * @returns {TeamcityProject[]} - projects except archived
  */
-function filterNotArchived(projects) {
-  return projects.filter(project => !project.archived);
+function filterNotArchivedAndNotRoot(projects) {
+  return projects.filter(project => !project.archived && project.id !== '_Root');
 }
 
 /**
@@ -29,13 +31,29 @@ function projectsAsMap(projects) {
 }
 
 /**
+ * Returns project path
+ *
+ * @this {TeamcityProject}
+ * @return {string} - project path
+ */
+function getPath() {
+  const path = [];
+  /*eslint consistent-this: ["error", "self"]*/
+  const self = this;
+  for (let cur = self; cur != null; cur = cur.parent) {
+    path.unshift(cur.name);
+  }
+  return path.join(' :: ');
+}
+
+/**
  * Converts TeamCity projects response to a tree of TeamCity projects.
  *
  * @param {{project: TeamcityProject[]}} projectResponse - TeamCity project response
  * @return {TeamcityProject[]} tree presentation of TeamCity projects
  */
 function asProjectTree(projectResponse) {
-  const projects = filterNotArchived(projectResponse.project || []);
+  const projects = filterNotArchivedAndNotRoot(projectResponse.project || []);
   const projectMap = projectsAsMap(projects);
 
   // Build a forest of projects
@@ -46,9 +64,11 @@ function asProjectTree(projectResponse) {
       const children = parent.children || [];
       children.push(project);
       parent.children = children;
+      project.parent = parent;
     } else {
       roots.push(project);
     }
+    project.getPath = getPath;
   });
 
   return roots;
