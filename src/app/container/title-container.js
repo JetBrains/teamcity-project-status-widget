@@ -16,9 +16,9 @@ const TitleContainer = connect(
     : {
       title: state.title || (state.project ? i18n('Status: {{ project }}', {project: state.project.path}) : i18n('Status')),
       counter: state.investigationsCount,
-      href: state.teamcityService &&
-        state.teamcityService.homeUrl &&
-        `${state.teamcityService.homeUrl}/investigations.html`,
+      href: state.project &&
+        state.project.id &&
+        `${state.teamcityService.homeUrl}/project.html?projectId=${state.project.id}`,
       dashboardApi
     })
 )(WidgetTitle);
