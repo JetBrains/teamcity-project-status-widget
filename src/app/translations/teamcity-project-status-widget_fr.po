@@ -11,13 +11,13 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2018-09-17 12:01\n"
+"PO-Revision-Date: 2018-09-17 13:07\n"
 
-#: src/app/configuration/component/build-type-select.js:49
+#: src/app/configuration/component/build-type-select.js:50
 msgid "All build configurations"
 msgstr ""
 
-#: src/app/configuration/component/build-type-select.js:48
+#: src/app/configuration/component/build-type-select.js:49
 msgid "Build configurations"
 msgstr ""
 
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Cannot load investigations"
 msgstr ""
 
-#: src/app/configuration/component/build-type-select.js:41
+#: src/app/configuration/component/build-type-select.js:42
 #: src/app/configuration/component/project-select.js:48
 msgid "Filter projects"
 msgstr ""
