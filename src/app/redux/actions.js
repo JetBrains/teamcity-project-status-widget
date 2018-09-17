@@ -47,29 +47,29 @@ export const updateHideChildProjects =
 export const applyConfiguration = createAction('Apply configuration');
 export const closeConfiguration = createAction('Close configuration mode');
 
-export const startedInvestigationsLoading =
-  createAction('Started loading list of investigations');
-export const finishedInvestigationsLoading =
-  createAction('Finished loading list of investigations');
-export const failedInvestigationsLoading =
-  createAction('Failed to load list of investigations');
+export const startedStatusLoading =
+  createAction('Started loading project builds statuses');
+export const finishedStatusLoading =
+  createAction('Finished loading project builds statuses');
+export const failedStatusLoading =
+  createAction('Failed to load project builds statuses');
 
-export const reloadInvestigations = () => async (dispatch, getState, {dashboardApi}) => {
+export const reloadStatuses = () => async (dispatch, getState, {dashboardApi}) => {
   const {teamcityService} = getState();
   if (teamcityService) {
-    await dispatch(startedInvestigationsLoading());
+    await dispatch(startedStatusLoading());
 
     const server = new TeamcityService(dashboardApi);
     try {
-      const investigations = await server.getMyInvestigations(teamcityService);
-      await dashboardApi.storeCache(investigations);
-      await dispatch(finishedInvestigationsLoading({
-        investigations: investigations.data,
-        investigationsCount: investigations.count
+      const buildStatusResponse = await server.getMyInvestigations(teamcityService);
+      await dashboardApi.storeCache(buildStatusResponse);
+      await dispatch(finishedStatusLoading({
+        buildStatuses: buildStatusResponse.data,
+        failedBuildsCount: buildStatusResponse.count
       }));
     } catch (e) {
       const error = (e.data && e.data.message) || e.message || e.toString();
-      await dispatch(failedInvestigationsLoading(error));
+      await dispatch(failedStatusLoading(error));
     }
   }
 };
@@ -168,7 +168,7 @@ export const saveConfiguration = () => async (dispatch, getState, {dashboardApi}
   });
   await dispatch(applyConfiguration());
   await dispatch(closeConfiguration());
-  await dispatch(reloadInvestigations());
+  await dispatch(reloadStatuses());
 };
 
 export const cancelConfiguration = () => async (dispatch, getState, {dashboardApi}) => {
@@ -182,7 +182,7 @@ export const cancelConfiguration = () => async (dispatch, getState, {dashboardAp
 export const initWidget = () => async (dispatch, getState, {dashboardApi, registerWidgetApi}) => {
   registerWidgetApi({
     onConfigure: () => dispatch(startConfiguration(false)),
-    onRefresh: () => dispatch(reloadInvestigations())
+    onRefresh: () => dispatch(reloadStatuses())
   });
   const config = await dashboardApi.readConfig();
   const {
@@ -194,7 +194,7 @@ export const initWidget = () => async (dispatch, getState, {dashboardApi, regist
     hideChildProjects,
     refreshPeriod
   } = config || {};
-  const {result: {data: investigations, count}} = (await dashboardApi.readCache()) || {result: {}};
+  const {result: {data: buildStatuses, count}} = (await dashboardApi.readCache()) || {result: {}};
   await dispatch(setInitialSettings({
     title,
     teamcityService,
@@ -203,10 +203,10 @@ export const initWidget = () => async (dispatch, getState, {dashboardApi, regist
     showGreenBuilds: showGreenBuilds || false,
     hideChildProjects: hideChildProjects || false,
     refreshPeriod,
-    investigations,
-    investigationsCount: count
+    buildStatuses,
+    failedBuildsCount: count
   }));
-  await dispatch(reloadInvestigations());
+  await dispatch(reloadStatuses());
   if (!config) {
     await dispatch(startConfiguration(true));
   }

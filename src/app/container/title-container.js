@@ -15,7 +15,7 @@ const TitleContainer = connect(
     }
     : {
       title: state.title || (state.project ? i18n('Status: {{ project }}', {project: state.project.path}) : i18n('Status')),
-      counter: state.investigationsCount,
+      counter: state.failedBuildsCount,
       href: state.project &&
         state.project.id &&
         `${state.teamcityService.homeUrl}/project.html?projectId=${state.project.id}`,

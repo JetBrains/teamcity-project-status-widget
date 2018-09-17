@@ -9,11 +9,11 @@ import {
   closeConfiguration,
   deselectBuildType,
   failedBuildTypesLoading,
-  failedInvestigationsLoading,
+  failedStatusLoading,
   failedProjectsLoading,
   failedTeamcityServicesLoading,
   finishedBuildTypesLoading,
-  finishedInvestigationsLoading,
+  finishedStatusLoading,
   finishedProjectsLoading,
   finishedTeamcityServicesLoading,
   openConfiguration,
@@ -22,7 +22,7 @@ import {
   selectTeamcityService,
   setInitialSettings,
   startedBuildTypesLoading,
-  startedInvestigationsLoading,
+  startedStatusLoading,
   startedProjectsLoading,
   startedTeamcityServicesLoading,
   updateHideChildProjects,
@@ -43,8 +43,8 @@ const reduce = createReducer({
     showGreenBuilds,
     hideChildProjects,
     refreshPeriod,
-    investigations,
-    investigationsCount
+    buildStatuses,
+    failedBuildsCount
   }) => ({
     ...state,
     title,
@@ -54,8 +54,8 @@ const reduce = createReducer({
     showGreenBuilds,
     hideChildProjects,
     refreshPeriod: refreshPeriod || DEFAULT_PERIOD,
-    investigations: investigations || [],
-    investigationsCount
+    buildStatuses: buildStatuses || [],
+    failedBuildsCount
   }),
   [openConfiguration]: (state, isInitialConfiguration) => ({
     ...state,
@@ -228,37 +228,38 @@ const reduce = createReducer({
       isConfiguring: false
     }
   }),
-  [startedInvestigationsLoading]: state => ({
+  [startedStatusLoading]: state => ({
     ...state,
-    isLoadingInvestigations: true
+    isLoadingBuildStatuses: true
   }),
-  [finishedInvestigationsLoading]: (state, {investigations, investigationsCount}) => ({
+  [finishedStatusLoading]: (state, {buildStatuses, failedBuildsCount}) => ({
     ...state,
-    investigations,
-    investigationsCount,
-    isLoadingInvestigations: false,
-    investigationLoadErrorMessage: null
+    buildStatuses,
+    failedBuildsCount,
+    isLoadingBuildStatuses: false,
+    buildStatusLoadErrorMessage: null
   }),
-  [failedInvestigationsLoading]: (state, investigationLoadErrorMessage) => ({
+  [failedStatusLoading]: (state, buildStatusLoadErrorMessage) => ({
     ...state,
-    investigations: [],
-    investigationsCount: -1,
-    isLoadingInvestigations: false,
-    investigationLoadErrorMessage
+    buildStatuses: [],
+    failedBuildsCount: -1,
+    isLoadingBuildStatuses: false,
+    buildStatusLoadErrorMessage
   })
 }, {
+  title: null,
   teamcityService: {},
   project: null,
   buildTypes: [],
   showGreenBuilds: false,
   hideChildProjects: false,
-
-  investigations: [],
-  isLoadingInvestigations: false,
-  investigationLoadErrorMessage: null,
-  investigationsCount: -1,
-  title: null,
   refreshPeriod: DEFAULT_PERIOD,
+
+  buildStatuses: [],
+  isLoadingBuildStatuses: false,
+  buildStatusLoadErrorMessage: null,
+  failedBuildsCount: -1,
+
   configuration: {
     isConfiguring: false,
     isInitialConfiguration: false,

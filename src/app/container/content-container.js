@@ -6,8 +6,8 @@ import {startConfiguration} from '../redux/actions';
 const ContentContainer = connect(
   state => ({
     teamcityService: state.teamcityService,
-    investigations: state.investigations,
-    investigationLoadErrorMessage: state.investigationLoadErrorMessage
+    buildStatuses: state.buildStatuses,
+    buildStatusLoadErrorMessage: state.buildStatusLoadErrorMessage
   }),
   dispatch => ({
     onConfigure: () => dispatch(startConfiguration(false))

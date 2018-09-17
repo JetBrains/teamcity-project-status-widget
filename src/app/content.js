@@ -8,7 +8,7 @@ import {i18n} from 'hub-dashboard-addons/dist/localization';
 import styles from './app.css';
 import Investigation from './investigation';
 
-import investigationStyles from './investigation.css';
+import buildStatusStyles from './investigation.css';
 
 function WidgetContent({children}) {
   return (
@@ -22,7 +22,7 @@ WidgetContent.propTypes = {
   children: PropTypes.node
 };
 
-const Content = ({teamcityService, investigations, investigationLoadErrorMessage, onConfigure}) => {
+const Content = ({teamcityService, buildStatuses, buildStatusLoadErrorMessage, onConfigure}) => {
   if (!teamcityService) {
     return (
       <WidgetContent>
@@ -32,35 +32,35 @@ const Content = ({teamcityService, investigations, investigationLoadErrorMessage
         </span>
       </WidgetContent>
     );
-  } else if (investigationLoadErrorMessage) {
+  } else if (buildStatusLoadErrorMessage) {
     return (
       <WidgetContent>
         <EmptyWidget face={EmptyWidgetFaces.ERROR}>
-          {i18n('Cannot load investigations')}
+          {i18n('Cannot load buildStatuses')}
           <br/>
-          {investigationLoadErrorMessage}
+          {buildStatusLoadErrorMessage}
         </EmptyWidget>
       </WidgetContent>
     );
-  } else if (!investigations.length) {
+  } else if (!buildStatuses.length) {
     return (
       <WidgetContent>
         <EmptyWidget face={EmptyWidgetFaces.JOY}>
-          <div dangerouslySetInnerHTML={{__html: i18n('No investigations<br>are assigned to you')}}/>
+          <div dangerouslySetInnerHTML={{__html: i18n('No buildStatuses<br>are assigned to you')}}/>
         </EmptyWidget>
       </WidgetContent>
     );
   } else {
     return (
       <WidgetContent>
-        <ul className={investigationStyles.investigations}>
-          {investigations.map(investigation => (
+        <ul className={buildStatusStyles.investigations}>
+          {buildStatuses.map(buildStatus => (
             <Investigation
-              key={investigation.id}
-              name={investigation.name}
-              url={investigation.url}
-              tests={investigation.tests}
-              problems={investigation.problems}
+              key={buildStatus.id}
+              name={buildStatus.name}
+              url={buildStatus.url}
+              tests={buildStatus.tests}
+              problems={buildStatus.problems}
             />
           ))}
         </ul>
@@ -71,8 +71,8 @@ const Content = ({teamcityService, investigations, investigationLoadErrorMessage
 
 Content.propTypes = {
   teamcityService: PropTypes.object,
-  investigations: PropTypes.array.isRequired,
-  investigationLoadErrorMessage: PropTypes.string,
+  buildStatuses: PropTypes.array.isRequired,
+  buildStatusLoadErrorMessage: PropTypes.string,
   onConfigure: PropTypes.func.isRequired
 };
 
