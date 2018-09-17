@@ -56,7 +56,7 @@ Contributions of any kind are welcome!
 
 This project is licensed under the Apache 2.0 License. For details, refer to the [LICENSE.txt file](https://github.com/JetBrains/hub-project-team-widget/blob/master/LICENSE.txt).
 
-[ci-bt]: https://teamcity.jetbrains.com/viewType.html?buildTypeId=JetBrainsUi_HubWidgets_HubTeamCityInvestigationsWidget
-[ci-img]: https://teamcity.jetbrains.com/app/rest/builds/buildType:JetBrainsUi_HubWidgets_HubTeamCityInvestigationsWidget/statusIcon.svg
+[ci-bt]: https://teamcity.jetbrains.com/viewType.html?buildTypeId=JetBrainsUi_HubWidgets_TeamCityProjectStatusWidget
+[ci-img]: https://teamcity.jetbrains.com/app/rest/builds/buildType:JetBrainsUi_HubWidgets_TeamCityProjectStatusWidget/statusIcon.svg
 [emojis]: https://github.com/kentcdodds/all-contributors#emoji-key
 [all-contributors]: https://github.com/kentcdodds/all-contributors
