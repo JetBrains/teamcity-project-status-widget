@@ -2,19 +2,25 @@ import {applyMiddleware, compose, createStore} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import {createReducer} from 'redux-act';
 
+import copyAndRemove from './copy-and-remove';
 import {
   applyConfiguration,
-  closeConfiguration, failedBuildTypesLoading,
+  closeConfiguration,
+  deselectBuildType,
+  failedBuildTypesLoading,
   failedInvestigationsLoading,
   failedProjectsLoading,
-  failedTeamcityServicesLoading, finishedBuildTypesLoading,
+  failedTeamcityServicesLoading,
+  finishedBuildTypesLoading,
   finishedInvestigationsLoading,
   finishedProjectsLoading,
   finishedTeamcityServicesLoading,
-  openConfiguration, selectBuildTypes,
+  openConfiguration,
+  selectBuildType,
   selectProject,
   selectTeamcityService,
-  setInitialSettings, startedBuildTypesLoading,
+  setInitialSettings,
+  startedBuildTypesLoading,
   startedInvestigationsLoading,
   startedProjectsLoading,
   startedTeamcityServicesLoading,
@@ -150,11 +156,21 @@ const reduce = createReducer({
       buildTypeLoadErrorMessage
     }
   }),
-  [selectBuildTypes]: (state, selectedBuildTypes) => ({
+  [selectBuildType]: (state, selectedBuildType) => ({
     ...state,
     configuration: {
       ...state.configuration,
-      selectedBuildTypes
+      selectedBuildTypes: [
+        ...state.configuration.selectedBuildTypes,
+        selectedBuildType
+      ]
+    }
+  }),
+  [deselectBuildType]: (state, unselectedBuildType) => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      selectedBuildTypes: copyAndRemove(state.configuration.selectedBuildTypes, unselectedBuildType, (a, b) => a.id === b.id)
     }
   }),
   [updateShowGreenBuilds]: (state, showGreenBuilds) => ({

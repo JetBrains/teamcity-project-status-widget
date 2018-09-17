@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 
-import {loadBuildTypes, selectBuildTypes} from '../../redux/actions';
+import {deselectBuildType, loadBuildTypes, selectBuildType} from '../../redux/actions';
 import BuildTypeSelect from '../component/build-type-select';
 
 const BuildTypeSelectContainer = connect(
@@ -12,7 +12,8 @@ const BuildTypeSelectContainer = connect(
     loadError: configuration.buildTypeLoadErrorMessage
   }),
   dispatch => ({
-    onConfigurationsSelect: item => dispatch(selectBuildTypes(item.project)),
+    onBuildTypeSelect: item => dispatch(selectBuildType(item.payload)),
+    onBuildTypeDeselect: item => dispatch(deselectBuildType(item.payload)),
     onOpen: () => dispatch(loadBuildTypes())
   })
 )(BuildTypeSelect);

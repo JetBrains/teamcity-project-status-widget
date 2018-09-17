@@ -33,8 +33,10 @@ export const finishedBuildTypesLoading =
   createAction('Finished loading list of build types');
 export const failedBuildTypesLoading =
   createAction('Failed to load list of build types');
-export const selectBuildTypes =
-  createAction('Select build types');
+export const selectBuildType =
+  createAction('Add selected build type');
+export const deselectBuildType =
+  createAction('Add selected build type');
 
 export const updateShowGreenBuilds =
   createAction('Toggle show green builds checkbox');
