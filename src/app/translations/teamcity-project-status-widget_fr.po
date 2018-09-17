@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2018-09-17 14:56\n"
+"PO-Revision-Date: 2018-09-17 16:14\n"
 
 #: src/app/configuration/component/build-type-select.js:50
 msgid "All build configurations"
@@ -29,8 +29,8 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: src/app/content.js:39
-msgid "Cannot load buildStatuses"
+#: src/app/content.js:48
+msgid "Cannot load build statuses"
 msgstr ""
 
 #: src/app/configuration/component/build-type-select.js:42
@@ -50,8 +50,8 @@ msgstr ""
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr ""
 
-#: src/app/content.js:49
-msgid "No buildStatuses<br>are assigned to you"
+#: src/app/content.js:57
+msgid "No failed builds"
 msgstr ""
 
 #: src/app/configuration/container/title-input-container.js:11
@@ -67,7 +67,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: src/app/content.js:31
+#: src/app/content.js:40
 msgid "Set up..."
 msgstr ""
 
@@ -75,12 +75,12 @@ msgstr ""
 msgid "Show green builds"
 msgstr ""
 
-#: src/app/container/title-container.js:11
-#: src/app/container/title-container.js:17
+#: src/app/container/title-container.js:23
+#: src/app/container/title-container.js:29
 msgid "Status"
 msgstr ""
 
-#: src/app/container/title-container.js:17
+#: src/app/container/title-container.js:29
 msgid "Status: {{ project }}"
 msgstr ""
 
@@ -97,10 +97,6 @@ msgstr ""
 msgid "TeamCity server"
 msgstr ""
 
-#: src/app/content.js:30
-msgid "TeamCity service is not configured yet."
-msgstr ""
-
 #: src/app/investigation.js:40
 msgid "Tests failed:"
 msgstr ""
@@ -111,6 +107,10 @@ msgstr ""
 
 #: src/app/configuration/container/refresh-period-container.js:12
 msgid "Widget refreshes every {{minutes}} minutes"
+msgstr ""
+
+#: src/app/content.js:38
+msgid "Widget setup is not finished yet."
 msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
