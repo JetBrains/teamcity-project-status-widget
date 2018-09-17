@@ -138,9 +138,32 @@ export const startConfiguration = isInitialConfiguration =>
   };
 
 export const saveConfiguration = () => async (dispatch, getState, {dashboardApi}) => {
-  const {configuration: {selectedTeamcityService, refreshPeriod}} = getState();
+  const {
+    configuration: {
+      title,
+      selectedTeamcityService,
+      selectedProject,
+      selectedBuildTypes,
+      showGreenBuilds,
+      hideChildProjects,
+      refreshPeriod
+    }
+  } = getState();
   await dashboardApi.storeConfig({
+    title,
     teamcityService: selectedTeamcityService,
+    project: selectedProject && {
+      id: selectedProject.id,
+      name: selectedProject.name,
+      path: selectedProject.path
+    },
+    buildTypes: selectedBuildTypes && selectedBuildTypes.map(it => ({
+      id: it.id,
+      name: it.name,
+      path: it.path
+    })),
+    showGreenBuilds,
+    hideChildProjects,
     refreshPeriod
   });
   await dispatch(applyConfiguration());
@@ -162,10 +185,23 @@ export const initWidget = () => async (dispatch, getState, {dashboardApi, regist
     onRefresh: () => dispatch(reloadInvestigations())
   });
   const config = await dashboardApi.readConfig();
-  const {teamcityService, refreshPeriod} = config || {};
+  const {
+    title,
+    teamcityService,
+    project,
+    buildTypes,
+    showGreenBuilds,
+    hideChildProjects,
+    refreshPeriod
+  } = config || {};
   const {result: {data: investigations, count}} = (await dashboardApi.readCache()) || {result: {}};
   await dispatch(setInitialSettings({
+    title,
     teamcityService,
+    project,
+    buildTypes: buildTypes || [],
+    showGreenBuilds: showGreenBuilds || false,
+    hideChildProjects: hideChildProjects || false,
     refreshPeriod,
     investigations,
     investigationsCount: count

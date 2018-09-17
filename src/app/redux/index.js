@@ -2,7 +2,8 @@ import {applyMiddleware, compose, createStore} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import {createReducer} from 'redux-act';
 
-import copyAndRemove from './copy-and-remove';
+import copyAndRemove from '../copy-and-remove';
+
 import {
   applyConfiguration,
   closeConfiguration,
@@ -34,9 +35,24 @@ import {
 const DEFAULT_PERIOD = 300;
 
 const reduce = createReducer({
-  [setInitialSettings]: (state, {teamcityService, refreshPeriod, investigations, investigationsCount}) => ({
-    ...state,
+  [setInitialSettings]: (state, {
+    title,
     teamcityService,
+    project,
+    buildTypes,
+    showGreenBuilds,
+    hideChildProjects,
+    refreshPeriod,
+    investigations,
+    investigationsCount
+  }) => ({
+    ...state,
+    title,
+    teamcityService,
+    project,
+    buildTypes,
+    showGreenBuilds,
+    hideChildProjects,
     refreshPeriod: refreshPeriod || DEFAULT_PERIOD,
     investigations: investigations || [],
     investigationsCount
@@ -50,6 +66,7 @@ const reduce = createReducer({
       refreshPeriod: state.refreshPeriod,
       selectedTeamcityService: state.teamcityService,
       selectedProject: state.project,
+      selectedBuildTypes: state.buildTypes || [],
       showGreenBuilds: state.showGreenBuilds,
       hideChildProjects: state.hideChildProjects,
 
@@ -200,6 +217,7 @@ const reduce = createReducer({
     title: state.configuration.title,
     teamcityService: state.configuration.selectedTeamcityService,
     project: state.configuration.selectedProject,
+    buildTypes: state.configuration.selectedBuildTypes,
     showGreenBuilds: state.configuration.showGreenBuilds,
     hideChildProjects: state.configuration.hideChildProjects
   }),
@@ -231,6 +249,7 @@ const reduce = createReducer({
 }, {
   teamcityService: {},
   project: null,
+  buildTypes: [],
   showGreenBuilds: false,
   hideChildProjects: false,
 
