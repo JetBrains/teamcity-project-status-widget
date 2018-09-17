@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-09-17 13:07\n"
+"PO-Revision-Date: 2018-09-17 14:56\n"
 
 #: src/app/configuration/component/build-type-select.js:50
 msgid "All build configurations"
@@ -30,7 +30,7 @@ msgid "Cancel"
 msgstr ""
 
 #: src/app/content.js:39
-msgid "Cannot load investigations"
+msgid "Cannot load buildStatuses"
 msgstr ""
 
 #: src/app/configuration/component/build-type-select.js:42
@@ -51,7 +51,7 @@ msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr ""
 
 #: src/app/content.js:49
-msgid "No investigations<br>are assigned to you"
+msgid "No buildStatuses<br>are assigned to you"
 msgstr ""
 
 #: src/app/configuration/container/title-input-container.js:11
