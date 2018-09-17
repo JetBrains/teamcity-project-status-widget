@@ -6,9 +6,9 @@ import EmptyWidget, {EmptyWidgetFaces} from '@jetbrains/hub-widget-ui/dist/empty
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import styles from './app.css';
-import Investigation from './investigation';
 
-import buildStatusStyles from './investigation.css';
+// TODO: remove when it's in hub-widget-ui
+EmptyWidgetFaces.HAPPY = '＼(＾▽＾)／';
 
 function WidgetContent({children}) {
   return (
@@ -22,12 +22,21 @@ WidgetContent.propTypes = {
   children: PropTypes.node
 };
 
-const Content = ({teamcityService, buildStatuses, buildStatusLoadErrorMessage, onConfigure}) => {
-  if (!teamcityService) {
+const Content = (
+  {
+    teamcityService,
+    project,
+    buildStatuses,
+    buildStatusLoadErrorMessage,
+    onConfigure
+  }
+) => {
+  if (!teamcityService || !project) {
     return (
       <WidgetContent>
         <span>
-          {i18n('TeamCity service is not configured yet.')}
+          {i18n('Widget setup is not finished yet.')}
+          <span>{' '}</span>
           <Link onClick={onConfigure}>{i18n('Set up...')}</Link>
         </span>
       </WidgetContent>
@@ -36,7 +45,7 @@ const Content = ({teamcityService, buildStatuses, buildStatusLoadErrorMessage, o
     return (
       <WidgetContent>
         <EmptyWidget face={EmptyWidgetFaces.ERROR}>
-          {i18n('Cannot load buildStatuses')}
+          {i18n('Cannot load build statuses')}
           <br/>
           {buildStatusLoadErrorMessage}
         </EmptyWidget>
@@ -45,25 +54,13 @@ const Content = ({teamcityService, buildStatuses, buildStatusLoadErrorMessage, o
   } else if (!buildStatuses.length) {
     return (
       <WidgetContent>
-        <EmptyWidget face={EmptyWidgetFaces.JOY}>
-          <div dangerouslySetInnerHTML={{__html: i18n('No buildStatuses<br>are assigned to you')}}/>
-        </EmptyWidget>
+        <EmptyWidget face={EmptyWidgetFaces.HAPPY}>{i18n('No failed builds')}</EmptyWidget>
       </WidgetContent>
     );
   } else {
     return (
       <WidgetContent>
-        <ul className={buildStatusStyles.investigations}>
-          {buildStatuses.map(buildStatus => (
-            <Investigation
-              key={buildStatus.id}
-              name={buildStatus.name}
-              url={buildStatus.url}
-              tests={buildStatus.tests}
-              problems={buildStatus.problems}
-            />
-          ))}
-        </ul>
+        {JSON.stringify(buildStatuses)}
       </WidgetContent>
     );
   }
@@ -71,6 +68,7 @@ const Content = ({teamcityService, buildStatuses, buildStatusLoadErrorMessage, o
 
 Content.propTypes = {
   teamcityService: PropTypes.object,
+  project: PropTypes.object,
   buildStatuses: PropTypes.array.isRequired,
   buildStatusLoadErrorMessage: PropTypes.string,
   onConfigure: PropTypes.func.isRequired

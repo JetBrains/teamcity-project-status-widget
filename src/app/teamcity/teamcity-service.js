@@ -28,9 +28,24 @@ export default class TeamcityService {
     });
   }
 
-  async getBuildType(teamcityService) {
-    return await this._fetchTeamcity(teamcityService, 'builds/:locator');
+  async getBuildStatuses(teamcityService, project, buildTypes) {
+    const locator = buildTypes.length > 0
+      ? buildTypes.map(it => `item(id:${it.id})`).join(',')
+      : `affectedProject:(id:${project.id})`;
+
+    return await this._fetchTeamcity(teamcityService, 'buildTypes', {
+      locator,
+      fields: 'count,buildType(' +
+        'id,webUrl,name,' +
+        'builds(' +
+        '$locator:(running:false,canceled:false,count:1),' +
+        'build(number,webUrl,startDate,finishDate,status,statusText)' +
+        '),' +
+        'project(archived,id,name)' +
+        ')'
+    });
   }
+
 
   /**
    * @deprecated

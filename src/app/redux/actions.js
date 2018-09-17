@@ -55,18 +55,23 @@ export const failedStatusLoading =
   createAction('Failed to load project builds statuses');
 
 export const reloadStatuses = () => async (dispatch, getState, {dashboardApi}) => {
-  const {teamcityService} = getState();
-  if (teamcityService) {
+  const {
+    teamcityService,
+    project,
+    buildTypes
+  } = getState();
+  if (teamcityService && project && buildTypes) {
     await dispatch(startedStatusLoading());
 
     const server = new TeamcityService(dashboardApi);
     try {
-      const buildStatusResponse = await server.getMyInvestigations(teamcityService);
-      await dashboardApi.storeCache(buildStatusResponse);
-      await dispatch(finishedStatusLoading({
-        buildStatuses: buildStatusResponse.data,
-        failedBuildsCount: buildStatusResponse.count
-      }));
+      const buildStatusResponse = await server.getBuildStatuses(
+        teamcityService,
+        project,
+        buildTypes
+      );
+      await dashboardApi.storeCache(buildStatusResponse.buildType);
+      await dispatch(finishedStatusLoading(buildStatusResponse.buildType));
     } catch (e) {
       const error = (e.data && e.data.message) || e.message || e.toString();
       await dispatch(failedStatusLoading(error));
@@ -194,7 +199,7 @@ export const initWidget = () => async (dispatch, getState, {dashboardApi, regist
     hideChildProjects,
     refreshPeriod
   } = config || {};
-  const {result: {data: buildStatuses, count}} = (await dashboardApi.readCache()) || {result: {}};
+  const {result: buildStatuses} = ((await dashboardApi.readCache())) || {result: []};
   await dispatch(setInitialSettings({
     title,
     teamcityService,
@@ -203,8 +208,7 @@ export const initWidget = () => async (dispatch, getState, {dashboardApi, regist
     showGreenBuilds: showGreenBuilds || false,
     hideChildProjects: hideChildProjects || false,
     refreshPeriod,
-    buildStatuses,
-    failedBuildsCount: count
+    buildStatuses: buildStatuses || []
   }));
   await dispatch(reloadStatuses());
   if (!config) {
