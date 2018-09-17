@@ -1,7 +1,7 @@
 import {createAction} from 'redux-act';
 
 import TeamcityService from '../teamcity/teamcity-service';
-import {asFlattenProjectTree} from '../teamcity/teamcity-convert';
+import {asFlattenBuildTypeTree, asFlattenProjectTree} from '../teamcity/teamcity-convert';
 
 export const setInitialSettings = createAction('Set initial settings');
 export const openConfiguration = createAction('Open configuration mode');
@@ -27,14 +27,14 @@ export const failedProjectsLoading =
 export const selectProject =
   createAction('Select project');
 
-export const startedConfigurationsLoading =
-  createAction('Started loading list of configurations');
-export const finishedConfigurationsLoading =
-  createAction('Finished loading list of configurations');
-export const failedConfigurationsLoading =
-  createAction('Failed to load list of configurations');
-export const selectConfiguration =
-  createAction('Select configuration');
+export const startedBuildTypesLoading =
+  createAction('Started loading list of build types');
+export const finishedBuildTypesLoading =
+  createAction('Finished loading list of build types');
+export const failedBuildTypesLoading =
+  createAction('Failed to load list of build types');
+export const selectBuildTypes =
+  createAction('Select build types');
 
 export const updateShowGreenBuilds =
   createAction('Toggle show green builds checkbox');
@@ -105,6 +105,26 @@ export const loadProjects = () => async (dispatch, getState, {dashboardApi}) => 
       const error = (e.data && e.data.message) || e.message || e.toString();
       const message = `Cannot load list of TeamCity projects: ${error}`;
       await dispatch(failedProjectsLoading(message));
+    }
+  }
+};
+
+export const loadBuildTypes = () => async (dispatch, getState, {dashboardApi}) => {
+  const {configuration: {selectedTeamcityService, selectedProject}} = getState();
+  if (selectedTeamcityService && selectedProject) {
+    await dispatch(startedBuildTypesLoading());
+    try {
+      const teamcityService = new TeamcityService(dashboardApi);
+      const [projectsResponse, buildTypesResponse] = await Promise.all([
+        teamcityService.getSubProjects(selectedTeamcityService, selectedProject),
+        teamcityService.getBuildTypesOfProject(selectedTeamcityService, selectedProject)
+      ]);
+      const projectsAndBuildTypesTree = asFlattenBuildTypeTree(selectedProject, projectsResponse, buildTypesResponse);
+      await dispatch(finishedBuildTypesLoading(projectsAndBuildTypesTree));
+    } catch (e) {
+      const error = (e.data && e.data.message) || e.message || e.toString();
+      const message = `Cannot load list of TeamCity configurations: ${error}`;
+      await dispatch(failedBuildTypesLoading(message));
     }
   }
 };

@@ -14,15 +14,16 @@ export default class TeamcityService {
     });
   }
 
-  async getBuildTypes(teamcityService) {
-    return await this._fetchTeamcity(teamcityService, 'buildTypes', {
-      fields: 'buildType(id,name,projectId)'
+  async getSubProjects(teamcityService, project) {
+    return await this._fetchTeamcity(teamcityService, 'projects', {
+      locator: `affectedProject:(id:${project.id})`,
+      fields: 'project(id,name,parentProjectId,archived)'
     });
   }
 
-  async getBuildTypesOfProject(teamcityService, projectId) {
+  async getBuildTypesOfProject(teamcityService, project) {
     return await this._fetchTeamcity(teamcityService, 'buildTypes', {
-      locator: `affectedProject:(id:${projectId})`,
+      locator: `affectedProject:(id:${project.id})`,
       fields: 'buildType(id,name,projectId)'
     });
   }

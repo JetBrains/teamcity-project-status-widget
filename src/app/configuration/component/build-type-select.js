@@ -4,36 +4,29 @@ import Select from '@jetbrains/ring-ui/components/select/select';
 import {MinWidth} from '@jetbrains/ring-ui/components/popup/position';
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
-function project2Item(project) {
-  return project && {
-    key: project.id,
-    label: project.name,
+function buildType2Item(buildType) {
+  return buildType && {
+    key: buildType.id,
+    label: buildType.name,
     // eslint-disable-next-line no-magic-numbers
-    level: project.level * 2,
-    project
-  };
-}
-
-function project2Selected(project) {
-  return project && {
-    key: project.id,
-    label: project.path
+    level: buildType.level * 2,
+    project: buildType
   };
 }
 
 /**
- * Checks if the project matches the query
+ * Checks if the project or buildType matches the query
  *
- * @param {TeamcityProject} project — project to test
+ * @param {TeamcityBuildType|TeamcityProject} configuration — configuration to test
  * @param {?string} query — query to fulfill
- * @returns {boolean} — if the project matches the query
+ * @returns {boolean} — if the configuration matches the query
  */
-function isMatching(project, query) {
-  return !query || query === '' || project.path.toLowerCase().includes(query.toLowerCase());
+function isMatching(configuration, query) {
+  return !query || query === '' || configuration.path.toLowerCase().includes(query.toLowerCase());
 }
 
 /**
- * Recursive search if any child satisfies the query
+ * Recursive search if any child satisfies query
  * @param {TeamcityProject[]} projects - array of projects
  * @param {string} query - query to fulfill
  * @returns {boolean} - satisfies or not
@@ -49,26 +42,26 @@ const filter = {
   fn: ({project}, query) => !query || anyIsMatching([project], query.replace(/\s*((::\s*)|(:$))/g, ' :: '))
 };
 
-const ProjectSelect =
-  ({isLoading, isDisabled, selectedProject, projectList, loadError, onProjectSelect, onOpen}) => (
+const BuildTypeSelect =
+  ({isLoading, isDisabled, selectedBuildTypes, projectAndBuildTypeList, loadError, onBuildTypeSelect, onOpen}) => (
     <Select
-      selectedLabel={i18n('Project')}
-      label={i18n('Project')}
-      multiple={false}
+      selectedLabel={i18n('Build configurations')}
+      label={i18n('All build configurations')}
+      multiple={true}
       loading={isLoading}
       disabled={isDisabled}
       filter={filter}
-      selected={project2Selected(selectedProject)}
+      selected={selectedBuildTypes}
       size={Select.Size.FULL}
       minWidth={MinWidth.TARGET}
-      data={(projectList || []).map(project2Item)}
+      data={(projectAndBuildTypeList || []).map(buildType2Item)}
       notFoundMessage={loadError}
-      onSelect={onProjectSelect}
+      onSelect={onBuildTypeSelect}
       onOpen={onOpen}
     />
   );
 
-const PROJECT_PROPS = {
+const BUILD_TYPE_PROPS = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
@@ -76,14 +69,14 @@ const PROJECT_PROPS = {
   parent: PropTypes.object
 };
 
-ProjectSelect.propTypes = {
+BuildTypeSelect.propTypes = {
   isLoading: PropTypes.bool,
   isDisabled: PropTypes.bool,
-  selectedProject: PropTypes.shape(PROJECT_PROPS),
-  projectList: PropTypes.arrayOf(PropTypes.shape(PROJECT_PROPS)),
+  selectedBuildTypes: PropTypes.arrayOf(PropTypes.shape(BUILD_TYPE_PROPS)),
+  projectAndBuildTypeList: PropTypes.arrayOf(PropTypes.shape(BUILD_TYPE_PROPS)),
   loadError: PropTypes.string,
-  onProjectSelect: PropTypes.func.isRequired,
+  onBuildTypeSelect: PropTypes.func.isRequired,
   onOpen: PropTypes.func.isRequired
 };
 
-export default ProjectSelect;
+export default BuildTypeSelect;

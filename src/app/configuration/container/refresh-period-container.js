@@ -13,7 +13,6 @@ const refreshTooltip = minutes => (minutes === 1
 
 const RefreshPeriodContainer = connect(
   state => ({
-    key: 'refresh',
     seconds: state.configuration.refreshPeriod,
     label: refreshLabel,
     tooltip: refreshTooltip

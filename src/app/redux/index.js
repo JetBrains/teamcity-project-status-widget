@@ -4,17 +4,17 @@ import {createReducer} from 'redux-act';
 
 import {
   applyConfiguration,
-  closeConfiguration,
+  closeConfiguration, failedBuildTypesLoading,
   failedInvestigationsLoading,
   failedProjectsLoading,
-  failedTeamcityServicesLoading,
+  failedTeamcityServicesLoading, finishedBuildTypesLoading,
   finishedInvestigationsLoading,
   finishedProjectsLoading,
   finishedTeamcityServicesLoading,
-  openConfiguration,
+  openConfiguration, selectBuildTypes,
   selectProject,
   selectTeamcityService,
-  setInitialSettings,
+  setInitialSettings, startedBuildTypesLoading,
   startedInvestigationsLoading,
   startedProjectsLoading,
   startedTeamcityServicesLoading,
@@ -119,7 +119,42 @@ const reduce = createReducer({
     ...state,
     configuration: {
       ...state.configuration,
-      selectedProject
+      selectedProject,
+      projectsAndBuildTypes: [],
+      selectedBuildTypes: [],
+      buildTypeLoadErrorMessage: null
+    }
+  }),
+  [startedBuildTypesLoading]: state => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      isLoadingBuildTypes: true
+    }
+  }),
+  [finishedBuildTypesLoading]: (state, projectsAndBuildTypes) => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      isLoadingBuildTypes: false,
+      projectsAndBuildTypes,
+      buildTypeLoadErrorMessage: null
+    }
+  }),
+  [failedBuildTypesLoading]: (state, buildTypeLoadErrorMessage) => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      isLoadingProjects: false,
+      projects: [],
+      buildTypeLoadErrorMessage
+    }
+  }),
+  [selectBuildTypes]: (state, selectedBuildTypes) => ({
+    ...state,
+    configuration: {
+      ...state.configuration,
+      selectedBuildTypes
     }
   }),
   [updateShowGreenBuilds]: (state, showGreenBuilds) => ({
@@ -207,10 +242,10 @@ const reduce = createReducer({
     selectedProject: null,
     projectLoadErrorMessage: null,
 
-    configurations: [],
-    isLoadingConfigurations: false,
-    selectedConfigurations: [],
-    configurationLoadErrorMessage: null,
+    projectsAndBuildTypes: [],
+    isLoadingBuildTypes: false,
+    selectedBuildTypes: [],
+    buildTypeLoadErrorMessage: null,
 
     showGreenBuilds: false,
     hideChildProjects: false

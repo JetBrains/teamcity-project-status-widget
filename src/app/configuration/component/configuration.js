@@ -14,6 +14,7 @@ const Configuration = (
     titleInput,
     serviceSelect,
     projectSelect,
+    configurationSelect,
 
     showGreenBuilds,
     onShowGreenBuildsChange,
@@ -32,7 +33,7 @@ const Configuration = (
     cancelButtonLabel={i18n('Cancel')}
     onCancel={onCancel}
 
-    panelControls={[refreshPeriodControl]}
+    panelControls={[<span key={'refresh'}>{refreshPeriodControl}</span>]}
   >
     {titleInput}
 
@@ -42,6 +43,10 @@ const Configuration = (
 
     <div className={styles.container}>
       {projectSelect}
+    </div>
+
+    <div className={styles.container}>
+      {configurationSelect}
     </div>
 
     <div className={classNames(styles.control, styles.controlFirst)}>
@@ -67,6 +72,7 @@ Configuration.propTypes = {
   titleInput: PropTypes.node.isRequired,
   serviceSelect: PropTypes.node.isRequired,
   projectSelect: PropTypes.node.isRequired,
+  configurationSelect: PropTypes.node.isRequired,
 
   showGreenBuilds: PropTypes.bool.isRequired,
   onShowGreenBuildsChange: PropTypes.func.isRequired,
