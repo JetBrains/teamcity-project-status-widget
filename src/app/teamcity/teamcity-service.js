@@ -1,5 +1,3 @@
-import convertTeamcityResponse from './teamcity-convert';
-
 const API_VER = '10.0';
 
 export default class TeamcityService {
@@ -46,31 +44,28 @@ export default class TeamcityService {
     });
   }
 
+  async getPaths(teamcityService, project) {
+    const [projectResponse, buildTypeResponse] = await Promise.all([
+      this.getSubProjects(teamcityService, project),
+      this.getBuildTypesOfProject(teamcityService, project)
+    ]);
 
-  /**
-   * @deprecated
-   */
-  async getInvestigations(teamcityService, locator) {
-    const teamcityResponse = await this.dashboardApi.fetch(
-      teamcityService.id,
-      `app/rest/${API_VER}/investigations`,
-      {
-        query: {
-          locator
-        },
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-        }
-      });
-    return convertTeamcityResponse(teamcityService, teamcityResponse);
-  }
+    const projects = projectResponse.project;
+    projects.unshift(project);
 
-  /**
-   * @deprecated
-   */
-  async getMyInvestigations(teamcityService) {
-    return await this.getInvestigations(teamcityService, 'state:TAKEN,assignee:current');
+    const projectMap = {};
+    projects.forEach(it => (projectMap[it.id] = it));
+
+    const paths = {};
+    buildTypeResponse.buildType.forEach(buildType => {
+      const path = [buildType.name];
+      for (let cur = projectMap[buildType.projectId]; cur; cur = projectMap[cur.parentProjectId]) {
+        path.unshift(cur.name);
+      }
+      paths[buildType.id] = path.join(' :: ');
+    });
+
+    return paths;
   }
 
   async _fetchTeamcity(teamcityService, path, query) {

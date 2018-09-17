@@ -1,0 +1,13 @@
+@value unit from "@jetbrains/ring-ui/components/global/global.css";
+
+.build {
+  margin-bottom: unit;
+
+  line-height: calc(unit * 3);
+}
+
+.build-type {
+  display: inline-block;
+
+  padding-left: 20px;
+}

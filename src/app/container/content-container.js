@@ -8,6 +8,7 @@ const ContentContainer = connect(
     teamcityService: state.teamcityService,
     project: state.project,
     buildStatuses: state.buildStatuses,
+    buildPaths: state.buildPaths,
     buildStatusLoadErrorMessage: state.buildStatusLoadErrorMessage
   }),
   dispatch => ({

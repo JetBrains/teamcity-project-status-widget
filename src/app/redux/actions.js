@@ -70,8 +70,10 @@ export const reloadStatuses = () => async (dispatch, getState, {dashboardApi}) =
         project,
         buildTypes
       );
-      await dashboardApi.storeCache(buildStatusResponse.buildType);
-      await dispatch(finishedStatusLoading(buildStatusResponse.buildType));
+      const buildStatuses = buildStatusResponse.buildType;
+      const buildPaths = await server.getPaths(teamcityService, project);
+      await dashboardApi.storeCache({buildStatuses, buildPaths});
+      await dispatch(finishedStatusLoading(buildStatuses));
     } catch (e) {
       const error = (e.data && e.data.message) || e.message || e.toString();
       await dispatch(failedStatusLoading(error));
@@ -199,7 +201,7 @@ export const initWidget = () => async (dispatch, getState, {dashboardApi, regist
     hideChildProjects,
     refreshPeriod
   } = config || {};
-  const {result: buildStatuses} = ((await dashboardApi.readCache())) || {result: []};
+  const {result: {buildStatuses, buildPaths}} = ((await dashboardApi.readCache())) || {result: {}};
   await dispatch(setInitialSettings({
     title,
     teamcityService,
@@ -208,7 +210,8 @@ export const initWidget = () => async (dispatch, getState, {dashboardApi, regist
     showGreenBuilds: showGreenBuilds || false,
     hideChildProjects: hideChildProjects || false,
     refreshPeriod,
-    buildStatuses: buildStatuses || []
+    buildStatuses,
+    buildPaths
   }));
   await dispatch(reloadStatuses());
   if (!config) {

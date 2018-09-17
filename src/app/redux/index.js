@@ -43,7 +43,8 @@ const reduce = createReducer({
     showGreenBuilds,
     hideChildProjects,
     refreshPeriod,
-    buildStatuses
+    buildStatuses,
+    buildPaths
   }) => ({
     ...state,
     title,
@@ -53,7 +54,8 @@ const reduce = createReducer({
     showGreenBuilds,
     hideChildProjects,
     refreshPeriod: refreshPeriod || DEFAULT_PERIOD,
-    buildStatuses: buildStatuses || []
+    buildStatuses: buildStatuses || [],
+    buildPaths: buildPaths || {}
   }),
   [openConfiguration]: (state, isInitialConfiguration) => ({
     ...state,
@@ -252,6 +254,7 @@ const reduce = createReducer({
   refreshPeriod: DEFAULT_PERIOD,
 
   buildStatuses: [],
+  buildPaths: {},
   isLoadingBuildStatuses: false,
   buildStatusLoadErrorMessage: null,
 
