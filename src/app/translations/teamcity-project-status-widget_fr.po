@@ -11,13 +11,21 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2018-09-14 16:44\n"
+"PO-Revision-Date: 2018-09-17 12:01\n"
+
+#: src/app/configuration/component/build-type-select.js:49
+msgid "All build configurations"
+msgstr ""
+
+#: src/app/configuration/component/build-type-select.js:48
+msgid "Build configurations"
+msgstr ""
 
 #: src/app/investigation.js:41
 msgid "Build problems:"
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:45
+#: src/app/configuration/component/configuration.js:33
 msgid "Cancel"
 msgstr ""
 
@@ -25,7 +33,12 @@ msgstr ""
 msgid "Cannot load investigations"
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:79
+#: src/app/configuration/component/build-type-select.js:41
+#: src/app/configuration/component/project-select.js:48
+msgid "Filter projects"
+msgstr ""
+
+#: src/app/configuration/component/configuration.js:62
 msgid "Hide child projects"
 msgstr ""
 
@@ -45,20 +58,30 @@ msgstr ""
 msgid "Optional title"
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:42
-msgid "Save"
+#: src/app/configuration/component/project-select.js:55
+#: src/app/configuration/component/project-select.js:56
+msgid "Project"
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:62
-msgid "Select service"
+#: src/app/configuration/component/configuration.js:30
+msgid "Save"
 msgstr ""
 
 #: src/app/content.js:31
 msgid "Set up..."
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:71
+#: src/app/configuration/component/configuration.js:54
 msgid "Show green builds"
+msgstr ""
+
+#: src/app/container/title-container.js:11
+#: src/app/container/title-container.js:17
+msgid "Status"
+msgstr ""
+
+#: src/app/container/title-container.js:17
+msgid "Status: {{ project }}"
 msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
@@ -69,9 +92,9 @@ msgstr ""
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr ""
 
-#: src/app/container/title-container.js:11
-#: src/app/container/title-container.js:17
-msgid "TeamCity Investigations"
+#: src/app/configuration/container/service-select-container.js:11
+#: src/app/configuration/container/service-select-container.js:13
+msgid "TeamCity server"
 msgstr ""
 
 #: src/app/content.js:30
@@ -82,11 +105,11 @@ msgstr ""
 msgid "Tests failed:"
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:15
+#: src/app/configuration/container/refresh-period-container.js:11
 msgid "Widget refreshes every minute"
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:16
+#: src/app/configuration/container/refresh-period-container.js:12
 msgid "Widget refreshes every {{minutes}} minutes"
 msgstr ""
 
@@ -94,7 +117,7 @@ msgstr ""
 msgid "am|pm"
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:13
+#: src/app/configuration/container/refresh-period-container.js:8
 msgid "{{minutes}} min"
 msgstr ""
 
