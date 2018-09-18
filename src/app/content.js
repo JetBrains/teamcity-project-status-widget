@@ -8,9 +8,6 @@ import {i18n} from 'hub-dashboard-addons/dist/localization';
 import styles from './app.css';
 import BuildStatus from './build-status';
 
-// TODO: remove when it's in hub-widget-ui
-EmptyWidgetFaces.HAPPY = '＼(＾▽＾)／';
-
 function WidgetContent({children}) {
   return (
     <div className={styles.widget}>
