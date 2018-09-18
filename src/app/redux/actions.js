@@ -67,14 +67,18 @@ export const reloadStatuses = () => async (dispatch, getState, {dashboardApi}) =
 
     const server = new TeamcityService(dashboardApi);
     try {
-      const buildStatusResponse = await server.getBuildStatuses(
+      const buildStatusRequest = server.getBuildStatuses(
         teamcityService,
         project,
         buildTypes,
         hideChildProjects
       );
+      const buildPathsRequest = server.getPaths(teamcityService, project);
+      const [buildStatusResponse, buildPaths] = await Promise.all([
+        buildStatusRequest,
+        buildPathsRequest
+      ]);
       const buildStatuses = buildStatusResponse.buildType;
-      const buildPaths = await server.getPaths(teamcityService, project);
       await dashboardApi.storeCache({buildStatuses, buildPaths});
       await dispatch(finishedStatusLoading(buildStatuses));
     } catch (e) {
