@@ -11,21 +11,21 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2018-09-18 15:12\n"
+"PO-Revision-Date: 2018-09-18 16:01\n"
 
-#: src/app/configuration/component/build-type-select.js:50
+#: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
 msgstr ""
 
-#: src/app/build-status.js:50
+#: src/app/build-status.js:54
 msgid "Assigned by"
 msgstr ""
 
-#: src/app/build-status.js:61
+#: src/app/build-status.js:65
 msgid "Automatically when fixed"
 msgstr ""
 
-#: src/app/configuration/component/build-type-select.js:49
+#: src/app/configuration/component/build-type-select.js:62
 msgid "Build configurations"
 msgstr ""
 
@@ -37,11 +37,11 @@ msgstr ""
 msgid "Cannot load build statuses"
 msgstr ""
 
-#: src/app/build-status.js:64
+#: src/app/build-status.js:68
 msgid "Comment"
 msgstr ""
 
-#: src/app/configuration/component/build-type-select.js:42
+#: src/app/configuration/component/build-type-select.js:44
 #: src/app/configuration/component/project-select.js:48
 msgid "Filter projects"
 msgstr ""
@@ -50,11 +50,11 @@ msgstr ""
 msgid "Hide child projects"
 msgstr ""
 
-#: src/app/build-status.js:46
+#: src/app/build-status.js:50
 msgid "Investigator"
 msgstr ""
 
-#: src/app/build-status.js:115
+#: src/app/build-status.js:89
 msgid "Is being investigated by: {{ user }}"
 msgstr ""
 
@@ -66,7 +66,7 @@ msgstr ""
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr ""
 
-#: src/app/build-status.js:60
+#: src/app/build-status.js:64
 msgid "Manually"
 msgstr ""
 
@@ -83,7 +83,7 @@ msgstr ""
 msgid "Project"
 msgstr ""
 
-#: src/app/build-status.js:58
+#: src/app/build-status.js:62
 msgid "Resolve"
 msgstr ""
 
@@ -99,16 +99,16 @@ msgstr ""
 msgid "Show green builds"
 msgstr ""
 
-#: src/app/build-status.js:54
+#: src/app/build-status.js:58
 msgid "Since"
 msgstr ""
 
 #: src/app/container/title-container.js:23
-#: src/app/container/title-container.js:29
+#: src/app/container/title-container.js:32
 msgid "Status"
 msgstr ""
 
-#: src/app/container/title-container.js:29
+#: src/app/container/title-container.js:31
 msgid "Status: {{ project }}"
 msgstr ""
 
