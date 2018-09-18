@@ -11,18 +11,22 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
-"PO-Revision-Date: 2018-09-17 16:14\n"
+"PO-Revision-Date: 2018-09-18 15:12\n"
 
 #: src/app/configuration/component/build-type-select.js:50
 msgid "All build configurations"
 msgstr ""
 
-#: src/app/configuration/component/build-type-select.js:49
-msgid "Build configurations"
+#: src/app/build-status.js:50
+msgid "Assigned by"
 msgstr ""
 
-#: src/app/investigation.js:41
-msgid "Build problems:"
+#: src/app/build-status.js:61
+msgid "Automatically when fixed"
+msgstr ""
+
+#: src/app/configuration/component/build-type-select.js:49
+msgid "Build configurations"
 msgstr ""
 
 #: src/app/configuration/component/configuration.js:33
@@ -31,6 +35,10 @@ msgstr ""
 
 #: src/app/content.js:48
 msgid "Cannot load build statuses"
+msgstr ""
+
+#: src/app/build-status.js:64
+msgid "Comment"
 msgstr ""
 
 #: src/app/configuration/component/build-type-select.js:42
@@ -42,12 +50,24 @@ msgstr ""
 msgid "Hide child projects"
 msgstr ""
 
+#: src/app/build-status.js:46
+msgid "Investigator"
+msgstr ""
+
+#: src/app/build-status.js:115
+msgid "Is being investigated by: {{ user }}"
+msgstr ""
+
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
 msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
+msgstr ""
+
+#: src/app/build-status.js:60
+msgid "Manually"
 msgstr ""
 
 #: src/app/content.js:57
@@ -63,6 +83,10 @@ msgstr ""
 msgid "Project"
 msgstr ""
 
+#: src/app/build-status.js:58
+msgid "Resolve"
+msgstr ""
+
 #: src/app/configuration/component/configuration.js:30
 msgid "Save"
 msgstr ""
@@ -73,6 +97,10 @@ msgstr ""
 
 #: src/app/configuration/component/configuration.js:54
 msgid "Show green builds"
+msgstr ""
+
+#: src/app/build-status.js:54
+msgid "Since"
 msgstr ""
 
 #: src/app/container/title-container.js:23
@@ -95,10 +123,6 @@ msgstr ""
 #: src/app/configuration/container/service-select-container.js:11
 #: src/app/configuration/container/service-select-container.js:13
 msgid "TeamCity server"
-msgstr ""
-
-#: src/app/investigation.js:40
-msgid "Tests failed:"
 msgstr ""
 
 #: src/app/configuration/container/refresh-period-container.js:11
