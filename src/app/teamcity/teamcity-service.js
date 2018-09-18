@@ -29,7 +29,7 @@ export default class TeamcityService {
   async getBuildStatuses(teamcityService, project, buildTypes) {
     const locator = buildTypes.length > 0
       ? buildTypes.map(it => `item(id:${it.id})`).join(',')
-      : `affectedProject:(id:${project.id})`;
+      : `affectedProject:(id:${project.id}),project:(archived:false)`;
 
     return await this._fetchTeamcity(teamcityService, 'buildTypes', {
       locator,
@@ -39,6 +39,7 @@ export default class TeamcityService {
         '$locator:(running:false,canceled:false,count:1),' +
         'build(number,webUrl,startDate,finishDate,status,statusText)' +
         '),' +
+        'investigations(investigation(assignee(name,username),assignment(user(name,username),timestamp,text))),' +
         'project(archived,id,name)' +
         ')'
     });
@@ -51,7 +52,6 @@ export default class TeamcityService {
     ]);
 
     const projects = projectResponse.project;
-    projects.unshift(project);
 
     const projectMap = {};
     projects.forEach(it => (projectMap[it.id] = it));

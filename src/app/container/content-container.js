@@ -9,7 +9,8 @@ const ContentContainer = connect(
     project: state.project,
     buildStatuses: state.buildStatuses,
     buildPaths: state.buildPaths,
-    buildStatusLoadErrorMessage: state.buildStatusLoadErrorMessage
+    buildStatusLoadErrorMessage: state.buildStatusLoadErrorMessage,
+    showGreenBuilds: state.showGreenBuilds
   }),
   dispatch => ({
     onConfigure: () => dispatch(startConfiguration(false))

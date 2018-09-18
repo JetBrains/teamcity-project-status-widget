@@ -6,7 +6,7 @@ import EmptyWidget, {EmptyWidgetFaces} from '@jetbrains/hub-widget-ui/dist/empty
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import styles from './app.css';
-import BuildStatus from "./build-status";
+import BuildStatus from './build-status';
 
 // TODO: remove when it's in hub-widget-ui
 EmptyWidgetFaces.HAPPY = '＼(＾▽＾)／';
@@ -29,6 +29,7 @@ const Content = (
     project,
     buildStatuses,
     buildPaths,
+    showGreenBuilds,
     buildStatusLoadErrorMessage,
     onConfigure
   }
@@ -62,13 +63,15 @@ const Content = (
   } else {
     return (
       <WidgetContent>
-        {buildStatuses.map(buildType => (
-          <BuildStatus
-            key={buildType.id}
-            buildType={buildType}
-            path={buildPaths[buildType.id] || buildType.name}
-          />
-        ))}
+        {buildStatuses.
+          map(buildType => (
+            <BuildStatus
+              key={buildType.id}
+              buildType={buildType}
+              path={buildPaths[buildType.id] || buildType.name}
+              showGreenBuilds={showGreenBuilds}
+            />
+          ))}
       </WidgetContent>
     );
   }
@@ -80,6 +83,7 @@ Content.propTypes = {
   buildStatuses: PropTypes.array.isRequired,
   buildPaths: PropTypes.object.isRequired,
   buildStatusLoadErrorMessage: PropTypes.string,
+  showGreenBuilds: PropTypes.bool.isRequired,
   onConfigure: PropTypes.func.isRequired
 };
 
