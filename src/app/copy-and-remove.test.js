@@ -23,6 +23,10 @@ describe('copyAndRemove', () => {
     expect(copyAndRemove([], 1, (a, b) => a === b)).to.deep.equal([]);
   });
   it('custom equals', () => {
-    expect(copyAndRemove([{id: 1}, {id: 2}, {id: 3}], {id: 2}, (a, b) => a.id === b.id)).to.deep.equal([{id: 1}, {id: 3}]);
+    expect(copyAndRemove(
+      [{id: 1}, {id: 2}, {id: 3}],
+      {id: 2},
+      (a, b) => a.id === b.id
+    )).to.deep.equal([{id: 1}, {id: 3}]);
   });
 });

@@ -15,14 +15,18 @@ import styles from './build-status.css';
 
 const TC_TIMESTAMP_REGEXP = /(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})([-+]\d+)/;
 
-function parseTeamcityTimestamp(tcTimestamp) {
+function toDate(tcTimestamp) {
   const jsTimestamp = tcTimestamp.replace(TC_TIMESTAMP_REGEXP, '$1-$2-$3T$4:$5:$6$7');
   return new Date(jsTimestamp);
 }
 
+function getName(tcUser) {
+  return tcUser.name || tcUser.username;
+}
+
 function buildDuration(build) {
-  const start = parseTeamcityTimestamp(build.startDate);
-  const finish = parseTeamcityTimestamp(build.finishDate);
+  const start = toDate(build.startDate);
+  const finish = toDate(build.finishDate);
   const durationMillis = finish.getTime() - start.getTime();
   const sec = Math.floor(durationMillis / 1000) % 60;
   const min = Math.floor(durationMillis / (60 * 1000)) % 60;
@@ -37,22 +41,22 @@ function buildDuration(build) {
 }
 
 function buildTimestamp(build) {
-  return build.finishDate && parseTeamcityTimestamp(build.finishDate).toLocaleString();
+  return build.finishDate && toDate(build.finishDate).toLocaleString();
 }
 
 function renderInvestigationTooltip(investigation) {
   const fields = [
     {
       name: i18n('Investigator'),
-      value: investigation.assignee.name || investigation.assignee.username
+      value: getName(investigation.assignee)
     },
     {
       name: i18n('Assigned by'),
-      value: investigation.assignment.user.name || investigation.assignment.user.username
+      value: getName(investigation.assignment.user)
     },
     {
       name: i18n('Since'),
-      value: parseTeamcityTimestamp(investigation.assignment.timestamp).toLocaleString()
+      value: toDate(investigation.assignment.timestamp).toLocaleString()
     },
     {
       name: i18n('Resolve'),
@@ -77,10 +81,20 @@ function renderInvestigationTooltip(investigation) {
   );
 }
 
+function renderInvestigation(buildType) {
+  const investigation = buildType.investigations.investigation[0];
+  return investigation && (
+    <Tooltip title={renderInvestigationTooltip(investigation)}>
+      <div className={styles.investigation}>
+        {i18n('Is being investigated by: {{ user }}', {user: getName(investigation.assignee)})}
+      </div>
+    </Tooltip>
+  );
+}
+
 const BuildStatus = ({buildType, path, showGreenBuilds}) => {
   const build = buildType.builds.build[0];
   const isSuccessful = build.status === 'SUCCESS';
-  const investigation = buildType.investigations.investigation[0];
   return ((showGreenBuilds || !isSuccessful) &&
     <div className={styles.build}>
       <Link
@@ -109,13 +123,7 @@ const BuildStatus = ({buildType, path, showGreenBuilds}) => {
             title={buildTimestamp(build)}
           >{buildDuration(build)}</span>
         </span>
-        {investigation && (
-          <Tooltip title={renderInvestigationTooltip(investigation)}>
-            <div className={styles.investigation}>
-              {i18n('Is being investigated by: {{ user }}', {user: investigation.assignee.name || investigation.assignee.username})}
-            </div>
-          </Tooltip>
-        )}
+        {renderInvestigation(buildType)}
       </div>
     </div>
   );

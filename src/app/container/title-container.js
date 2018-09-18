@@ -26,7 +26,10 @@ const TitleContainer = connect(
       dashboardApi
     }
     : {
-      title: state.title || (state.project ? i18n('Status: {{ project }}', {project: state.project.path}) : i18n('Status')),
+      title: state.title ||
+        (state.project
+          ? i18n('Status: {{ project }}', {project: state.project.path})
+          : i18n('Status')),
       counter: countFailedBuilds(state.buildStatuses || []),
       href: state.project &&
         state.project.id &&

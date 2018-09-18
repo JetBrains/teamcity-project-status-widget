@@ -23,7 +23,9 @@ function buildType2Item(projectOrBuildType) {
  * @returns {boolean} — if the configuration matches the query
  */
 function isMatching(projectOrBuildType, query) {
-  return !query || query === '' || projectOrBuildType.path.toLowerCase().includes(query.toLowerCase());
+  return !query ||
+    query === '' ||
+    projectOrBuildType.path.toLowerCase().includes(query.toLowerCase());
 }
 
 /**
@@ -44,7 +46,18 @@ const filter = {
 };
 
 const BuildTypeSelect =
-  ({isLoading, isDisabled, selectedBuildTypes, projectAndBuildTypeList, loadError, onBuildTypeSelect, onBuildTypeDeselect, onOpen}) => (
+  (
+    {
+      isLoading,
+      isDisabled,
+      selectedBuildTypes,
+      projectAndBuildTypeList,
+      loadError,
+      onBuildTypeSelect,
+      onBuildTypeDeselect,
+      onOpen
+    }
+  ) => (
     <Select
       selectedLabel={i18n('Build configurations')}
       label={i18n('All build configurations')}

@@ -187,7 +187,11 @@ const reduce = createReducer({
     ...state,
     configuration: {
       ...state.configuration,
-      selectedBuildTypes: copyAndRemove(state.configuration.selectedBuildTypes, unselectedBuildType, (a, b) => a.id === b.id)
+      selectedBuildTypes: copyAndRemove(
+        state.configuration.selectedBuildTypes,
+        unselectedBuildType,
+        (a, b) => a.id === b.id
+      )
     }
   }),
   [updateShowGreenBuilds]: (state, showGreenBuilds) => ({

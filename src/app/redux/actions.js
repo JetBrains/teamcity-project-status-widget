@@ -54,6 +54,7 @@ export const finishedStatusLoading =
 export const failedStatusLoading =
   createAction('Failed to load project builds statuses');
 
+// eslint-disable-next-line complexity
 export const reloadStatuses = () => async (dispatch, getState, {dashboardApi}) => {
   const {
     teamcityService,
@@ -130,7 +131,11 @@ export const loadBuildTypes = () => async (dispatch, getState, {dashboardApi}) =
         teamcityService.getSubProjects(selectedTeamcityService, selectedProject),
         teamcityService.getBuildTypesOfProject(selectedTeamcityService, selectedProject)
       ]);
-      const projectsAndBuildTypesTree = asFlattenBuildTypeTree(selectedProject, projectsResponse, buildTypesResponse);
+      const projectsAndBuildTypesTree = asFlattenBuildTypeTree(
+        selectedProject,
+        projectsResponse,
+        buildTypesResponse
+      );
       await dispatch(finishedBuildTypesLoading(projectsAndBuildTypesTree));
     } catch (e) {
       const error = (e.data && e.data.message) || e.message || e.toString();
