@@ -26,10 +26,15 @@ export default class TeamcityService {
     });
   }
 
-  async getBuildStatuses(teamcityService, project, buildTypes) {
-    const locator = buildTypes.length > 0
-      ? buildTypes.map(it => `item(id:${it.id})`).join(',')
-      : `affectedProject:(id:${project.id}),project:(archived:false)`;
+  async getBuildStatuses(teamcityService, project, buildTypes, hideChildProjects) {
+    let locator;
+    if (buildTypes.length > 0) {
+      locator = buildTypes.map(it => `item(id:${it.id})`).join(',');
+    } else if (hideChildProjects) {
+      locator = `project:(id:${project.id})`;
+    } else {
+      locator = `affectedProject:(id:${project.id}),project:(archived:false)`;
+    }
 
     return await this._fetchTeamcity(teamcityService, 'buildTypes', {
       locator,

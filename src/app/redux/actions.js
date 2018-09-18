@@ -58,7 +58,8 @@ export const reloadStatuses = () => async (dispatch, getState, {dashboardApi}) =
   const {
     teamcityService,
     project,
-    buildTypes
+    buildTypes,
+    hideChildProjects
   } = getState();
   if (teamcityService && project && buildTypes) {
     await dispatch(startedStatusLoading());
@@ -68,7 +69,8 @@ export const reloadStatuses = () => async (dispatch, getState, {dashboardApi}) =
       const buildStatusResponse = await server.getBuildStatuses(
         teamcityService,
         project,
-        buildTypes
+        buildTypes,
+        hideChildProjects
       );
       const buildStatuses = buildStatusResponse.buildType;
       const buildPaths = await server.getPaths(teamcityService, project);
