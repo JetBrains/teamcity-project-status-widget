@@ -1,4 +1,4 @@
-const API_VER = '10.0';
+const API_VER = 'latest';
 
 export default class TeamcityService {
 
@@ -33,13 +33,13 @@ export default class TeamcityService {
 
     return await this._fetchTeamcity(teamcityService, 'buildTypes', {
       locator,
-      fields: 'count,buildType(' +
+      fields: 'count,nextHref,buildType(' +
         'id,webUrl,name,' +
         'builds(' +
         '$locator:(running:false,canceled:false,count:1),' +
         'build(number,webUrl,startDate,finishDate,status,statusText)' +
         '),' +
-        'investigations(investigation(assignee(name,username),assignment(user(name,username),timestamp,text))),' +
+        'investigations(investigation(assignee(name,username),assignment(user(name,username),timestamp,text),resolution(type))),' +
         'project(archived,id,name)' +
         ')'
     });
