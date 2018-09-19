@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-09-18 17:08\n"
+"PO-Revision-Date: 2018-09-19 12:57\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: src/app/content.js:48
+#: src/app/content.js:49
 msgid "Cannot load build statuses"
 msgstr ""
 
@@ -46,7 +46,7 @@ msgstr ""
 msgid "Filter projects"
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:62
+#: src/app/configuration/component/configuration.js:68
 msgid "Hide child projects"
 msgstr ""
 
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Manually"
 msgstr ""
 
-#: src/app/content.js:57
+#: src/app/content.js:58
 msgid "No failed builds"
 msgstr ""
 
@@ -91,11 +91,11 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: src/app/content.js:40
+#: src/app/content.js:41
 msgid "Set up..."
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:54
+#: src/app/configuration/component/configuration.js:57
 msgid "Show green builds"
 msgstr ""
 
@@ -133,7 +133,7 @@ msgstr ""
 msgid "Widget refreshes every {{minutes}} minutes"
 msgstr ""
 
-#: src/app/content.js:38
+#: src/app/content.js:39
 msgid "Widget setup is not finished yet."
 msgstr ""
 
