@@ -8,15 +8,16 @@ import {i18n} from 'hub-dashboard-addons/dist/localization';
 import styles from './app.css';
 import BuildStatus from './build-status';
 
-function WidgetContent({children}) {
+function WidgetContent({children, testKey}) {
   return (
-    <div className={styles.widget}>
+    <div className={styles.widget} data-test={testKey}>
       {children}
     </div>
   );
 }
 
 WidgetContent.propTypes = {
+  testKey: PropTypes.string,
   children: PropTypes.node
 };
 
@@ -33,7 +34,7 @@ const Content = (
 ) => {
   if (!teamcityService || !project) {
     return (
-      <WidgetContent>
+      <WidgetContent testKey={'widget-setup-pending'}>
         <span>
           {i18n('Widget setup is not finished yet.')}
           <span>{' '}</span>
@@ -43,7 +44,7 @@ const Content = (
     );
   } else if (buildStatusLoadErrorMessage) {
     return (
-      <WidgetContent>
+      <WidgetContent testKey={'widget-load-error'}>
         <EmptyWidget face={EmptyWidgetFaces.ERROR}>
           {i18n('Cannot load build statuses')}
           <br/>
@@ -53,13 +54,13 @@ const Content = (
     );
   } else if (!buildStatuses.length) {
     return (
-      <WidgetContent>
+      <WidgetContent testKey={'widget-no-builds'}>
         <EmptyWidget face={EmptyWidgetFaces.HAPPY}>{i18n('No failed builds')}</EmptyWidget>
       </WidgetContent>
     );
   } else {
     return (
-      <WidgetContent>
+      <WidgetContent testKey={'widget-build-list'}>
         {buildStatuses.
           map(buildType => (
             <BuildStatus

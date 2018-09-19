@@ -37,19 +37,22 @@ const Configuration = (
   >
     {titleInput}
 
-    <div className={styles.container}>
+    <div className={styles.container} data-test="service-select">
       {serviceSelect}
     </div>
 
-    <div className={styles.container}>
+    <div className={styles.container} data-test="project-select">
       {projectSelect}
     </div>
 
-    <div className={styles.container}>
+    <div className={styles.container} data-test="configuration-select">
       {configurationSelect}
     </div>
 
-    <div className={classNames(styles.control, styles.controlFirst)}>
+    <div
+      className={classNames(styles.control, styles.controlFirst)}
+      data-test="show-green-builds"
+    >
       <Checkbox
         label={i18n('Show green builds')}
         checked={showGreenBuilds}
@@ -57,7 +60,10 @@ const Configuration = (
       />
     </div>
 
-    <div className={styles.control}>
+    <div
+      className={styles.control}
+      data-test="hide-child-projects"
+    >
       <Checkbox
         label={i18n('Hide child projects')}
         checked={hideChildProjects}
