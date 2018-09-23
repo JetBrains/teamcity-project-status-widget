@@ -4,20 +4,50 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: src/app/investigation.js:41
-msgid "Build problems:"
+#: src/app/configuration/component/build-type-select.js:63
+msgid "All build configurations"
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:45
+#: src/app/build-status.js:54
+msgid "Assigned by"
+msgstr ""
+
+#: src/app/build-status.js:65
+msgid "Automatically when fixed"
+msgstr ""
+
+#: src/app/configuration/component/build-type-select.js:62
+msgid "Build configurations"
+msgstr ""
+
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
+#: src/app/configuration/component/configuration.js:33
 msgid "Cancel"
 msgstr ""
 
-#: src/app/content.js:39
-msgid "Cannot load investigations"
+#: src/app/content.js:49
+msgid "Cannot load build statuses"
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:79
+#: src/app/build-status.js:68
+msgid "Comment"
+msgstr ""
+
+#: src/app/configuration/component/build-type-select.js:44
+#: src/app/configuration/component/project-select.js:48
+msgid "Filter projects"
+msgstr ""
+
+#: src/app/configuration/component/configuration.js:68
 msgid "Hide child projects"
+msgstr ""
+
+#: src/app/build-status.js:50
+msgid "Investigator"
+msgstr ""
+
+#: src/app/build-status.js:89
+msgid "Is being investigated by: {{ user }}"
 msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
@@ -28,28 +58,55 @@ msgstr ""
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr ""
 
-#: src/app/content.js:49
-msgid "No investigations<br>are assigned to you"
+#: src/app/build-status.js:64
+msgid "Manually"
+msgstr ""
+
+#: src/app/content.js:58
+msgid "No failed builds"
+msgstr ""
+
+#: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
+msgid "Oops! Something went wrong..."
 msgstr ""
 
 #: src/app/configuration/container/title-input-container.js:11
 msgid "Optional title"
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:42
+#: src/app/configuration/component/project-select.js:55
+#: src/app/configuration/component/project-select.js:56
+msgid "Project"
+msgstr ""
+
+#: src/app/build-status.js:62
+msgid "Resolve"
+msgstr ""
+
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
+#: src/app/configuration/component/configuration.js:30
 msgid "Save"
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:62
-msgid "Select service"
-msgstr ""
-
-#: src/app/content.js:31
+#: src/app/content.js:41
 msgid "Set up..."
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:71
+#: src/app/configuration/component/configuration.js:57
 msgid "Show green builds"
+msgstr ""
+
+#: src/app/build-status.js:58
+msgid "Since"
+msgstr ""
+
+#: src/app/container/title-container.js:23
+#: src/app/container/title-container.js:32
+msgid "Status"
+msgstr ""
+
+#: src/app/container/title-container.js:31
+msgid "Status: {{ project }}"
 msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
@@ -60,31 +117,27 @@ msgstr ""
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr ""
 
-#: src/app/container/title-container.js:11
-#: src/app/container/title-container.js:17
-msgid "TeamCity Investigations"
+#: src/app/configuration/container/service-select-container.js:11
+#: src/app/configuration/container/service-select-container.js:13
+msgid "TeamCity server"
 msgstr ""
 
-#: src/app/content.js:30
-msgid "TeamCity service is not configured yet."
-msgstr ""
-
-#: src/app/investigation.js:40
-msgid "Tests failed:"
-msgstr ""
-
-#: src/app/configuration/component/configuration.js:15
+#: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:69
 msgid "Widget refreshes every minute"
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:16
-msgid "Widget refreshes every {{minutes}} minutes"
+#: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
+msgid "Widget refreshes every {{minutesCount}} minutes"
+msgstr ""
+
+#: src/app/content.js:39
+msgid "Widget setup is not finished yet."
 msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
 msgid "am|pm"
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:13
-msgid "{{minutes}} min"
+#: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
+msgid "{{minutesCount}} min"
 msgstr ""

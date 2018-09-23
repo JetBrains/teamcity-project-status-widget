@@ -16,7 +16,7 @@ const ServiceSelectContainer = connect(
     loadError: state.configuration.serviceLoadErrorMessage
   }),
   dispatch => ({
-    onServiceSelect: selectedItem => dispatch(selectTeamcityService(selectedItem.service))
+    onServiceSelect: service => dispatch(selectTeamcityService(service))
   })
 )(ServiceSelect);
 
