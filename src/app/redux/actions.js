@@ -197,12 +197,24 @@ export const cancelConfiguration = () => async (dispatch, getState, {dashboardAp
   }
 };
 
+async function fixedConfig(dashboardApi) {
+  const config = await dashboardApi.readConfig();
+  const {project} = config;
+  return {
+    ...config,
+    project: project && {
+      ...project,
+      path: project.path && project.path.replace(/\s*:(?!:)\s*/g, ' :: ')
+    }
+  };
+}
+
 export const initWidget = () => async (dispatch, getState, {dashboardApi, registerWidgetApi}) => {
   registerWidgetApi({
     onConfigure: () => dispatch(startConfiguration(false)),
     onRefresh: () => dispatch(reloadStatuses())
   });
-  const config = await dashboardApi.readConfig();
+  const config = await fixedConfig(dashboardApi);
   const {
     title,
     teamcityService,
