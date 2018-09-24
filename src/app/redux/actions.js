@@ -59,12 +59,13 @@ export const failedStatusLoading =
 // eslint-disable-next-line complexity
 export const reloadStatuses = () => async (dispatch, getState, {dashboardApi}) => {
   const {
+    configuration: {isConfiguring},
     teamcityService,
     project,
     buildTypes,
     hideChildProjects
   } = getState();
-  if (teamcityService && project && buildTypes) {
+  if (!isConfiguring && teamcityService && project && buildTypes) {
     await dispatch(startedStatusLoading());
 
     const server = new TeamcityService(dashboardApi);
