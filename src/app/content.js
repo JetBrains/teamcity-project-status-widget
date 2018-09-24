@@ -21,6 +21,16 @@ WidgetContent.propTypes = {
   children: PropTypes.node
 };
 
+function getRelativePath(project, buildPaths, buildType) {
+  const path = buildPaths[buildType.id] || buildType.name;
+  const prefix = `${project.path} :: `;
+  if (path && path.indexOf(prefix) === 0) {
+    return path.substring(prefix.length);
+  } else {
+    return path;
+  }
+}
+
 const Content = (
   {
     isInitializing,
@@ -33,7 +43,8 @@ const Content = (
     onConfigure
   }
 ) => {
-  const builds = buildStatuses.filter(buildType => showGreenBuilds || !isSuccessfulBuildType(buildType));
+  const builds = buildStatuses.
+    filter(buildType => showGreenBuilds || !isSuccessfulBuildType(buildType));
 
   if (isInitializing) {
     return (
@@ -72,7 +83,7 @@ const Content = (
           <BuildStatus
             key={buildType.id}
             buildType={buildType}
-            path={buildPaths[buildType.id] || buildType.name}
+            path={getRelativePath(project, buildPaths, buildType)}
             showGreenBuilds={showGreenBuilds}
           />
         ))}
