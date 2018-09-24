@@ -77,6 +77,14 @@ export default class TeamcityService {
     return paths;
   }
 
+  async getBuildTypes(teamcityService, buildTypes) {
+    return await Promise.all(buildTypes.map(({id}) =>
+      this._fetchTeamcity(teamcityService, `buildTypes/${id}`, {
+        fields: 'id,name'
+      })
+    ));
+  }
+
   async _fetchTeamcity(teamcityService, path, query) {
     return await this.dashboardApi.fetch(
       teamcityService.id,

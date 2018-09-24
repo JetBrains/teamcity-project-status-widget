@@ -5,6 +5,7 @@ import {startConfiguration} from '../redux/actions';
 
 const ContentContainer = connect(
   state => ({
+    isInitializing: state.isInitializing,
     teamcityService: state.teamcityService,
     project: state.project,
     buildStatuses: state.buildStatuses,

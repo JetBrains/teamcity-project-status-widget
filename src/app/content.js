@@ -23,6 +23,7 @@ WidgetContent.propTypes = {
 
 const Content = (
   {
+    isInitializing,
     teamcityService,
     project,
     buildStatuses,
@@ -34,7 +35,11 @@ const Content = (
 ) => {
   const builds = buildStatuses.filter(buildType => showGreenBuilds || !isSuccessfulBuildType(buildType));
 
-  if (!teamcityService || !project) {
+  if (isInitializing) {
+    return (
+      <WidgetContent testKey={'widget-initializing'}/>
+    );
+  } else if (!teamcityService || !project) {
     return (
       <WidgetContent testKey={'widget-setup-pending'}>
         <span>
@@ -77,6 +82,7 @@ const Content = (
 };
 
 Content.propTypes = {
+  isInitializing: PropTypes.bool.isRequired,
   teamcityService: PropTypes.object,
   project: PropTypes.object,
   buildStatuses: PropTypes.array.isRequired,

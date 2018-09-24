@@ -3,6 +3,8 @@ import {createAction} from 'redux-act';
 import TeamcityService from '../teamcity/teamcity-service';
 import {asFlattenBuildTypeTree, asFlattenProjectTree} from '../teamcity/teamcity-convert';
 
+import {fixedConfig} from './config-fix';
+
 export const setInitialSettings = createAction('Set initial settings');
 export const openConfiguration = createAction('Open configuration mode');
 export const updateRefreshPeriod = createAction('Update refresh period');
@@ -196,18 +198,6 @@ export const cancelConfiguration = () => async (dispatch, getState, {dashboardAp
     await dashboardApi.removeWidget();
   }
 };
-
-async function fixedConfig(dashboardApi) {
-  const config = await dashboardApi.readConfig();
-  const {project} = config;
-  return {
-    ...config,
-    project: project && {
-      ...project,
-      path: project.path && project.path.replace(/\s*:(?!:)\s*/g, ' :: ')
-    }
-  };
-}
 
 export const initWidget = () => async (dispatch, getState, {dashboardApi, registerWidgetApi}) => {
   registerWidgetApi({

@@ -47,6 +47,7 @@ const reduce = createReducer({
     buildPaths
   }) => ({
     ...state,
+    isInitializing: false,
     title,
     teamcityService,
     project,
@@ -249,6 +250,7 @@ const reduce = createReducer({
     buildStatusLoadErrorMessage
   })
 }, {
+  isInitializing: true,
   title: null,
   teamcityService: {},
   project: null,
