@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-09-24 16:10\n"
+"PO-Revision-Date: 2018-09-24 16:17\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -34,7 +34,7 @@ msgstr "Build-Konfigurationen"
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: src/app/content.js:56
+#: src/app/content.js:67
 msgid "Cannot load build statuses"
 msgstr "Build-Statuswerte können nicht geladen werden"
 
@@ -71,7 +71,7 @@ msgstr "Jan|Feb|Mär|Apr|Mai|Jun|Jul|Aug|Sep|Okt|Nov|Dez"
 msgid "Manually"
 msgstr "Manuell"
 
-#: src/app/content.js:65
+#: src/app/content.js:76
 msgid "No failed builds"
 msgstr "Keine fehlgeschlagenen Builds"
 
@@ -97,7 +97,7 @@ msgstr "Lösen"
 msgid "Save"
 msgstr "Speichern"
 
-#: src/app/content.js:48
+#: src/app/content.js:59
 msgid "Set up..."
 msgstr "Einrichten..."
 
@@ -139,7 +139,7 @@ msgstr "Widget wird jede Minute aktualisiert"
 msgid "Widget refreshes every {{minutesCount}} minutes"
 msgstr ""
 
-#: src/app/content.js:46
+#: src/app/content.js:57
 msgid "Widget setup is not finished yet."
 msgstr "Die Widget-Einrichtung ist noch nicht beendet."
 
