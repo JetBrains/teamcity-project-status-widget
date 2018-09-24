@@ -92,10 +92,15 @@ function renderInvestigation(buildType) {
   );
 }
 
-const BuildStatus = ({buildType, path, showGreenBuilds}) => {
+export function isSuccessfulBuildType(buildType) {
   const build = buildType.builds.build[0];
-  const isSuccessful = build.status === 'SUCCESS';
-  return ((showGreenBuilds || !isSuccessful) &&
+  return build.status === 'SUCCESS';
+}
+
+const BuildStatus = ({buildType, path}) => {
+  const build = buildType.builds.build[0];
+  const isSuccessful = isSuccessfulBuildType(buildType);
+  return (
     <div className={styles.build} data-test="build">
       <Link
         target="_top"
@@ -135,8 +140,7 @@ const BuildStatus = ({buildType, path, showGreenBuilds}) => {
 
 BuildStatus.propTypes = {
   buildType: PropTypes.object.isRequired,
-  path: PropTypes.string.isRequired,
-  showGreenBuilds: PropTypes.bool.isRequired
+  path: PropTypes.string.isRequired
 };
 
 export default BuildStatus;

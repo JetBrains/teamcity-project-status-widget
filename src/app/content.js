@@ -6,7 +6,7 @@ import EmptyWidget, {EmptyWidgetFaces} from '@jetbrains/hub-widget-ui/dist/empty
 import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import styles from './app.css';
-import BuildStatus from './build-status';
+import BuildStatus, {isSuccessfulBuildType} from './build-status';
 
 function WidgetContent({children, testKey}) {
   return (
@@ -32,6 +32,8 @@ const Content = (
     onConfigure
   }
 ) => {
+  const builds = buildStatuses.filter(buildType => showGreenBuilds || !isSuccessfulBuildType(buildType));
+
   if (!teamcityService || !project) {
     return (
       <WidgetContent testKey={'widget-setup-pending'}>
@@ -52,7 +54,7 @@ const Content = (
         </EmptyWidget>
       </WidgetContent>
     );
-  } else if (!buildStatuses.length) {
+  } else if (!builds.length) {
     return (
       <WidgetContent testKey={'widget-no-builds'}>
         <EmptyWidget face={EmptyWidgetFaces.HAPPY}>{i18n('No failed builds')}</EmptyWidget>
@@ -61,15 +63,14 @@ const Content = (
   } else {
     return (
       <WidgetContent testKey={'widget-build-list'}>
-        {buildStatuses.
-          map(buildType => (
-            <BuildStatus
-              key={buildType.id}
-              buildType={buildType}
-              path={buildPaths[buildType.id] || buildType.name}
-              showGreenBuilds={showGreenBuilds}
-            />
-          ))}
+        {builds.map(buildType => (
+          <BuildStatus
+            key={buildType.id}
+            buildType={buildType}
+            path={buildPaths[buildType.id] || buildType.name}
+            showGreenBuilds={showGreenBuilds}
+          />
+        ))}
       </WidgetContent>
     );
   }
