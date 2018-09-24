@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
-"PO-Revision-Date: 2018-09-24 14:14\n"
+"PO-Revision-Date: 2018-09-24 14:44\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -34,7 +34,7 @@ msgstr "ビルド構成"
 msgid "Cancel"
 msgstr "取り消す"
 
-#: src/app/content.js:49
+#: src/app/content.js:51
 msgid "Cannot load build statuses"
 msgstr "ビルドステータスを読み込めません"
 
@@ -71,7 +71,7 @@ msgstr "1月|2月|3月|4月|5月|6月|7月|8月|9月|10月|11月|12月"
 msgid "Manually"
 msgstr "手動"
 
-#: src/app/content.js:58
+#: src/app/content.js:60
 msgid "No failed builds"
 msgstr "失敗したビルドはありません"
 
@@ -97,7 +97,7 @@ msgstr "解決"
 msgid "Save"
 msgstr "保存"
 
-#: src/app/content.js:41
+#: src/app/content.js:43
 msgid "Set up..."
 msgstr "セットアップ…"
 
@@ -139,7 +139,7 @@ msgstr "ウィジェットは1分ごとに更新されます"
 msgid "Widget refreshes every {{minutesCount}} minutes"
 msgstr ""
 
-#: src/app/content.js:39
+#: src/app/content.js:41
 msgid "Widget setup is not finished yet."
 msgstr "ウィジェットの設定はまだ完了していません。"
 
