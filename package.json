@@ -1,6 +1,6 @@
 {
   "name": "teamcity-project-status",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "config": {
     "components": "./src",
