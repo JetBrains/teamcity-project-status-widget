@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-09-24 14:44\n"
+"PO-Revision-Date: 2018-09-24 16:10\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: src/app/content.js:51
+#: src/app/content.js:56
 msgid "Cannot load build statuses"
 msgstr ""
 
@@ -71,7 +71,7 @@ msgstr ""
 msgid "Manually"
 msgstr ""
 
-#: src/app/content.js:60
+#: src/app/content.js:65
 msgid "No failed builds"
 msgstr ""
 
@@ -97,7 +97,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: src/app/content.js:43
+#: src/app/content.js:48
 msgid "Set up..."
 msgstr ""
 
@@ -139,7 +139,7 @@ msgstr ""
 msgid "Widget refreshes every {{minutesCount}} minutes"
 msgstr ""
 
-#: src/app/content.js:41
+#: src/app/content.js:46
 msgid "Widget setup is not finished yet."
 msgstr ""
 
