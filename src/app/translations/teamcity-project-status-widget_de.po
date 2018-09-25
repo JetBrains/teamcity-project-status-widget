@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-09-24 16:17\n"
+"PO-Revision-Date: 2018-09-25 13:11\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -29,8 +29,7 @@ msgstr "Automatisch bei Behebung"
 msgid "Build configurations"
 msgstr "Build-Konfigurationen"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
-#: src/app/configuration/component/configuration.js:33
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:46
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -47,7 +46,7 @@ msgstr "Kommentar"
 msgid "Filter projects"
 msgstr "Projekte filtern"
 
-#: src/app/configuration/component/configuration.js:68
+#: src/app/configuration/component/configuration.js:67
 msgid "Hide child projects"
 msgstr "Untergeordnete Projekte ausblenden"
 
@@ -92,8 +91,7 @@ msgstr "Projekt"
 msgid "Resolve"
 msgstr "Lösen"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
-#: src/app/configuration/component/configuration.js:30
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:43
 msgid "Save"
 msgstr "Speichern"
 
@@ -101,7 +99,7 @@ msgstr "Speichern"
 msgid "Set up..."
 msgstr "Einrichten..."
 
-#: src/app/configuration/component/configuration.js:57
+#: src/app/configuration/component/configuration.js:56
 msgid "Show green builds"
 msgstr "Grüne Builds anzeigen"
 
