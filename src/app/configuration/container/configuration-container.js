@@ -26,7 +26,11 @@ const ConfigurationContainer = connect(
 
     showGreenBuilds: state.configuration.showGreenBuilds,
 
-    hideChildProjects: state.configuration.hideChildProjects
+    hideChildProjects: state.configuration.hideChildProjects,
+
+    isConfigurationComplete: !!(
+      state.configuration.selectedTeamcityService && state.configuration.selectedProject
+    )
   }),
   dispatch => ({
     onShowGreenBuildsChange: event => dispatch(updateShowGreenBuilds(event.target.checked)),

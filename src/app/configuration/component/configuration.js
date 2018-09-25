@@ -22,16 +22,15 @@ const Configuration = (
     hideChildProjects,
     onHideChildProjectsChange,
 
+    isConfigurationComplete,
     onSave,
     onCancel
   }
 ) => (
   <ConfigurationForm
-    saveButtonLabel={i18n('Save')}
     onSave={onSave}
-
-    cancelButtonLabel={i18n('Cancel')}
     onCancel={onCancel}
+    isInvalid={!isConfigurationComplete}
 
     panelControls={[<span key={'refresh'}>{refreshPeriodControl}</span>]}
   >
@@ -86,6 +85,7 @@ Configuration.propTypes = {
   hideChildProjects: PropTypes.bool.isRequired,
   onHideChildProjectsChange: PropTypes.func.isRequired,
 
+  isConfigurationComplete: PropTypes.bool.isRequired,
   onSave: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired
 };
