@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-09-25 13:11\n"
+"PO-Revision-Date: 2018-09-28 13:04\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -33,7 +33,7 @@ msgstr "Build-Konfigurationen"
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: src/app/content.js:67
+#: src/app/content.js:57
 msgid "Cannot load build statuses"
 msgstr "Build-Statuswerte können nicht geladen werden"
 
@@ -70,13 +70,13 @@ msgstr "Jan|Feb|Mär|Apr|Mai|Jun|Jul|Aug|Sep|Okt|Nov|Dez"
 msgid "Manually"
 msgstr "Manuell"
 
-#: src/app/content.js:76
+#: src/app/content.js:66
 msgid "No failed builds"
 msgstr "Keine fehlgeschlagenen Builds"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr ""
+msgstr "Entschuldigung! Etwas ist schiefgegangen."
 
 #: src/app/configuration/container/title-input-container.js:11
 msgid "Optional title"
@@ -95,7 +95,7 @@ msgstr "Lösen"
 msgid "Save"
 msgstr "Speichern"
 
-#: src/app/content.js:59
+#: src/app/content.js:49
 msgid "Set up..."
 msgstr "Einrichten..."
 
@@ -135,9 +135,9 @@ msgstr "Widget wird jede Minute aktualisiert"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
 msgid "Widget refreshes every {{minutesCount}} minutes"
-msgstr ""
+msgstr "Widget wird alle {{minutesCount}} Minuten aktualisiert"
 
-#: src/app/content.js:57
+#: src/app/content.js:47
 msgid "Widget setup is not finished yet."
 msgstr "Die Widget-Einrichtung ist noch nicht beendet."
 
@@ -147,5 +147,5 @@ msgstr "AM|PM"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"
-msgstr ""
+msgstr "{{minutesCount}} Min."
 

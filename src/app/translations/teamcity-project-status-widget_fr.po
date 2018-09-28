@@ -11,68 +11,68 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2018-09-25 13:10\n"
+"PO-Revision-Date: 2018-09-28 13:04\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
-msgstr ""
+msgstr "Toutes les configurations de build"
 
 #: src/app/build-status.js:54
 msgid "Assigned by"
-msgstr ""
+msgstr "Attribué par"
 
 #: src/app/build-status.js:65
 msgid "Automatically when fixed"
-msgstr ""
+msgstr "Automatiquement lorsque corrigé"
 
 #: src/app/configuration/component/build-type-select.js:62
 msgid "Build configurations"
-msgstr ""
+msgstr "Configurations de la build"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:46
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
-#: src/app/content.js:67
+#: src/app/content.js:57
 msgid "Cannot load build statuses"
-msgstr ""
+msgstr "Impossible de charger les statuts de la build"
 
 #: src/app/build-status.js:68
 msgid "Comment"
-msgstr ""
+msgstr "Commenter"
 
 #: src/app/configuration/component/build-type-select.js:44
 #: src/app/configuration/component/project-select.js:48
 msgid "Filter projects"
-msgstr ""
+msgstr "Filtrer les projets"
 
 #: src/app/configuration/component/configuration.js:67
 msgid "Hide child projects"
-msgstr ""
+msgstr "Masquer les projets enfants"
 
 #: src/app/build-status.js:50
 msgid "Investigator"
-msgstr ""
+msgstr "Investigateur"
 
 #: src/app/build-status.js:89
 msgid "Is being investigated by: {{ user }}"
-msgstr ""
+msgstr "En cours d'investigation par : {{ user }}"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
-msgstr ""
+msgstr "Janvier|Février|Mars|Avril|Mai|Juin|Juillet|Août|Septembre|Octobre|Novembre|Décembre"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
-msgstr ""
+msgstr "Jan|Fév|Mar|Avr|Mai|Jun|Jul|Aoû|Sep|Oct|Nov|Déc"
 
 #: src/app/build-status.js:64
 msgid "Manually"
-msgstr ""
+msgstr "Manuellement"
 
-#: src/app/content.js:76
+#: src/app/content.js:66
 msgid "No failed builds"
-msgstr ""
+msgstr "Aucune build en échec"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
@@ -80,70 +80,70 @@ msgstr ""
 
 #: src/app/configuration/container/title-input-container.js:11
 msgid "Optional title"
-msgstr ""
+msgstr "Titre facultatif"
 
 #: src/app/configuration/component/project-select.js:55
 #: src/app/configuration/component/project-select.js:56
 msgid "Project"
-msgstr ""
+msgstr "Projet"
 
 #: src/app/build-status.js:62
 msgid "Resolve"
-msgstr ""
+msgstr "Résoudre"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:43
 msgid "Save"
-msgstr ""
+msgstr "Enregistrer"
 
-#: src/app/content.js:59
+#: src/app/content.js:49
 msgid "Set up..."
-msgstr ""
+msgstr "Configurer..."
 
 #: src/app/configuration/component/configuration.js:56
 msgid "Show green builds"
-msgstr ""
+msgstr "Afficher les builds vertes"
 
 #: src/app/build-status.js:58
 msgid "Since"
-msgstr ""
+msgstr "Depuis"
 
 #: src/app/container/title-container.js:23
 #: src/app/container/title-container.js:32
 msgid "Status"
-msgstr ""
+msgstr "Statut"
 
 #: src/app/container/title-container.js:31
 msgid "Status: {{ project }}"
-msgstr ""
+msgstr "Statut : {{ project }}"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
-msgstr ""
+msgstr "Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
-msgstr ""
+msgstr "Dim|Lun|Mar|Mer|Jeu|Ven|Sam"
 
 #: src/app/configuration/container/service-select-container.js:11
 #: src/app/configuration/container/service-select-container.js:13
 msgid "TeamCity server"
-msgstr ""
+msgstr "Serveur TeamCity"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:69
 msgid "Widget refreshes every minute"
-msgstr ""
+msgstr "Le widget s'actualise chaque minute"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
 msgid "Widget refreshes every {{minutesCount}} minutes"
 msgstr ""
 
-#: src/app/content.js:57
+#: src/app/content.js:47
 msgid "Widget setup is not finished yet."
-msgstr ""
+msgstr "La configuration du widget n'est pas encore terminée."
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
 msgid "am|pm"
-msgstr ""
+msgstr "am|pm"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"
