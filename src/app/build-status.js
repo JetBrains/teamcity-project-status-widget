@@ -129,7 +129,7 @@ const BuildStatus = ({buildType, path}) => {
           <span
             className={styles.buildTime}
             title={buildTimestamp(build)}
-            date-test="build-duration"
+            data-test="build-duration"
           >{buildDuration(build)}</span>
         </span>
         {renderInvestigation(buildType)}

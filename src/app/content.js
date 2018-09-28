@@ -21,16 +21,6 @@ WidgetContent.propTypes = {
   children: PropTypes.node
 };
 
-function getRelativePath(project, buildPaths, buildType) {
-  const path = buildPaths[buildType.id] || buildType.name;
-  const prefix = `${project.path} :: `;
-  if (path && path.indexOf(prefix) === 0) {
-    return path.substring(prefix.length);
-  } else {
-    return path;
-  }
-}
-
 const Content = (
   {
     isInitializing,
@@ -83,7 +73,7 @@ const Content = (
           <BuildStatus
             key={buildType.id}
             buildType={buildType}
-            path={getRelativePath(project, buildPaths, buildType)}
+            path={buildPaths[buildType.id] || buildType.name}
             showGreenBuilds={showGreenBuilds}
           />
         ))}

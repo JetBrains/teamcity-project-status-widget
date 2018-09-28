@@ -237,9 +237,10 @@ const reduce = createReducer({
     ...state,
     isLoadingBuildStatuses: true
   }),
-  [finishedStatusLoading]: (state, buildStatuses) => ({
+  [finishedStatusLoading]: (state, {buildStatuses, buildPaths}) => ({
     ...state,
     buildStatuses,
+    buildPaths,
     isLoadingBuildStatuses: false,
     buildStatusLoadErrorMessage: null
   }),

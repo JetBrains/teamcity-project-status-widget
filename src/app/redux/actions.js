@@ -83,7 +83,7 @@ export const reloadStatuses = () => async (dispatch, getState, {dashboardApi}) =
       ]);
       const buildStatuses = buildStatusResponse.buildType;
       await dashboardApi.storeCache({buildStatuses, buildPaths});
-      await dispatch(finishedStatusLoading(buildStatuses));
+      await dispatch(finishedStatusLoading({buildStatuses, buildPaths}));
     } catch (e) {
       const error = (e.data && e.data.message) || e.message || e.toString();
       await dispatch(failedStatusLoading(error));
