@@ -14,7 +14,7 @@ const Widget = (
     onRefresh,
     isLoadingBuildStatuses,
     dashboardApi,
-    Title,
+    title,
     Configuration,
     Content
   }
@@ -31,7 +31,7 @@ const Widget = (
     <ConfigurableWidget
       isConfiguring={isConfiguring}
       dashboardApi={dashboardApi}
-      Title={Title}
+      widgetTitle={title}
       Configuration={Configuration}
       Content={Content}
     />
@@ -44,7 +44,10 @@ Widget.propTypes = {
   refreshPeriod: PropTypes.number.isRequired,
   onRefresh: PropTypes.func.isRequired,
   dashboardApi: PropTypes.object.isRequired,
-  Title: PropTypes.func.isRequired,
+  title: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]).isRequired,
   Configuration: PropTypes.func.isRequired,
   Content: PropTypes.func.isRequired
 };
