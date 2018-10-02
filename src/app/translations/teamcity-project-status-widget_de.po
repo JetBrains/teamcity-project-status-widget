@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-09-28 13:04\n"
+"PO-Revision-Date: 2018-10-02 18:33\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -29,7 +29,7 @@ msgstr "Automatisch bei Behebung"
 msgid "Build configurations"
 msgstr "Build-Konfigurationen"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:46
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -91,7 +91,7 @@ msgstr "Projekt"
 msgid "Resolve"
 msgstr "Lösen"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:43
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 msgid "Save"
 msgstr "Speichern"
 
@@ -107,12 +107,12 @@ msgstr "Grüne Builds anzeigen"
 msgid "Since"
 msgstr "Seit"
 
-#: src/app/container/title-container.js:23
-#: src/app/container/title-container.js:32
+#: src/app/container/widget-container.js:28
+#: src/app/container/widget-container.js:47
 msgid "Status"
 msgstr "Status"
 
-#: src/app/container/title-container.js:31
+#: src/app/container/widget-container.js:27
 msgid "Status: {{ project }}"
 msgstr "Status: {{ project }}"
 

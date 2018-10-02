@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2018-09-28 13:04\n"
+"PO-Revision-Date: 2018-10-02 18:33\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -29,7 +29,7 @@ msgstr "Automatiquement lorsque corrigé"
 msgid "Build configurations"
 msgstr "Configurations de la build"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:46
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -76,7 +76,7 @@ msgstr "Aucune build en échec"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr ""
+msgstr "Oups ! Un problème est survenu..."
 
 #: src/app/configuration/container/title-input-container.js:11
 msgid "Optional title"
@@ -91,7 +91,7 @@ msgstr "Projet"
 msgid "Resolve"
 msgstr "Résoudre"
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:43
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -107,12 +107,12 @@ msgstr "Afficher les builds vertes"
 msgid "Since"
 msgstr "Depuis"
 
-#: src/app/container/title-container.js:23
-#: src/app/container/title-container.js:32
+#: src/app/container/widget-container.js:28
+#: src/app/container/widget-container.js:47
 msgid "Status"
 msgstr "Statut"
 
-#: src/app/container/title-container.js:31
+#: src/app/container/widget-container.js:27
 msgid "Status: {{ project }}"
 msgstr "Statut : {{ project }}"
 
@@ -135,7 +135,7 @@ msgstr "Le widget s'actualise chaque minute"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
 msgid "Widget refreshes every {{minutesCount}} minutes"
-msgstr ""
+msgstr "Le widget s'actualise toutes les {{minutesCount}} minutes"
 
 #: src/app/content.js:47
 msgid "Widget setup is not finished yet."
@@ -147,5 +147,5 @@ msgstr "am|pm"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"
-msgstr ""
+msgstr "{{minutesCount}} mn"
 
