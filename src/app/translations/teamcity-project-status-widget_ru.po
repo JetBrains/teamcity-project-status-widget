@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-10-02 18:33\n"
+"PO-Revision-Date: 2018-10-04 13:49\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -27,7 +27,7 @@ msgstr "Автоматически при исправлении"
 
 #: src/app/configuration/component/build-type-select.js:62
 msgid "Build configurations"
-msgstr ""
+msgstr "Конфигурации сборки"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 msgid "Cancel"
@@ -37,18 +37,26 @@ msgstr "Отмена"
 msgid "Cannot load build statuses"
 msgstr ""
 
+#: src/app/redux/actions.js:126
+msgid "Cannot load list of TeamCity projects: {{ error }}"
+msgstr ""
+
+#: src/app/redux/actions.js:111
+msgid "Cannot load list of TeamCity services: {{ error }}"
+msgstr ""
+
 #: src/app/build-status.js:68
 msgid "Comment"
-msgstr ""
+msgstr "Комментарий"
 
 #: src/app/configuration/component/build-type-select.js:44
 #: src/app/configuration/component/project-select.js:48
 msgid "Filter projects"
-msgstr ""
+msgstr "Фильтровать проекты"
 
 #: src/app/configuration/component/configuration.js:67
 msgid "Hide child projects"
-msgstr ""
+msgstr "Скрыть дочерние проекты"
 
 #: src/app/build-status.js:50
 msgid "Investigator"
@@ -56,7 +64,7 @@ msgstr "Исследователь"
 
 #: src/app/build-status.js:89
 msgid "Is being investigated by: {{ user }}"
-msgstr ""
+msgstr "Исследует: {{ user }}"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -72,7 +80,7 @@ msgstr "Вручную"
 
 #: src/app/content.js:66
 msgid "No failed builds"
-msgstr ""
+msgstr "Нет неудавшихся сборок"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
@@ -85,7 +93,7 @@ msgstr "Необязательный заголовок"
 #: src/app/configuration/component/project-select.js:55
 #: src/app/configuration/component/project-select.js:56
 msgid "Project"
-msgstr ""
+msgstr "Проект"
 
 #: src/app/build-status.js:62
 msgid "Resolve"
