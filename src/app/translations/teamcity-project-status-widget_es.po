@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
-"PO-Revision-Date: 2018-10-04 13:48\n"
+"PO-Revision-Date: 2018-10-04 14:00\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -36,6 +36,10 @@ msgstr "Cancelar"
 #: src/app/content.js:57
 msgid "Cannot load build statuses"
 msgstr "No pueden cargarse los estados del build"
+
+#: src/app/redux/actions.js:150
+msgid "Cannot load list of TeamCity configurations: {{ error }}"
+msgstr ""
 
 #: src/app/redux/actions.js:126
 msgid "Cannot load list of TeamCity projects: {{ error }}"
