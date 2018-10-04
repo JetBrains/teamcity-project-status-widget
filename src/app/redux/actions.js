@@ -1,4 +1,5 @@
 import {createAction} from 'redux-act';
+import {i18n} from 'hub-dashboard-addons/dist/localization';
 
 import TeamcityService from '../teamcity/teamcity-service';
 import {asFlattenBuildTypeTree, asFlattenProjectTree} from '../teamcity/teamcity-convert';
@@ -107,7 +108,7 @@ export const loadTeamCityServices = () => async (dispatch, getState, {dashboardA
     await dispatch(finishedTeamcityServicesLoading(servicesPage.services || []));
   } catch (e) {
     const error = (e.data && e.data.message) || e.message || e.toString();
-    const message = `Cannot load list of TeamCity services: ${error}`;
+    const message = i18n('Cannot load list of TeamCity services: {{ error }}', {error});
     await dispatch(failedTeamcityServicesLoading(message));
   }
 };
@@ -122,7 +123,7 @@ export const loadProjects = () => async (dispatch, getState, {dashboardApi}) => 
       await dispatch(finishedProjectsLoading(asFlattenProjectTree(projectsResponse)));
     } catch (e) {
       const error = (e.data && e.data.message) || e.message || e.toString();
-      const message = `Cannot load list of TeamCity projects: ${error}`;
+      const message = i18n('Cannot load list of TeamCity projects: {{ error }}', {error});
       await dispatch(failedProjectsLoading(message));
     }
   }

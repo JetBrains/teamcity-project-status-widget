@@ -169,8 +169,8 @@ const reduce = createReducer({
     ...state,
     configuration: {
       ...state.configuration,
-      isLoadingProjects: false,
-      projects: [],
+      isLoadingBuildTypes: false,
+      projectsAndBuildTypes: [],
       buildTypeLoadErrorMessage
     }
   }),
