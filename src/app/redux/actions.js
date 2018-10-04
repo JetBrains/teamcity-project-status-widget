@@ -147,7 +147,7 @@ export const loadBuildTypes = () => async (dispatch, getState, {dashboardApi}) =
       await dispatch(finishedBuildTypesLoading(projectsAndBuildTypesTree));
     } catch (e) {
       const error = (e.data && e.data.message) || e.message || e.toString();
-      const message = `Cannot load list of TeamCity configurations: ${error}`;
+      const message = i18n('Cannot load list of TeamCity configurations: {{ error }}', {error});
       await dispatch(failedBuildTypesLoading(message));
     }
   }
