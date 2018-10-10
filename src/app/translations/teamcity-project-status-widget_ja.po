@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
-"PO-Revision-Date: 2018-10-04 15:36\n"
+"PO-Revision-Date: 2018-10-08 21:03\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -39,15 +39,15 @@ msgstr "ビルドステータスを読み込めません"
 
 #: src/app/redux/actions.js:150
 msgid "Cannot load list of TeamCity configurations: {{ error }}"
-msgstr ""
+msgstr "TeamCity構成のリストを読み込めません: {{ error }}"
 
 #: src/app/redux/actions.js:126
 msgid "Cannot load list of TeamCity projects: {{ error }}"
-msgstr ""
+msgstr "TeamCityプロジェクトのリストを読み込めません: {{ error }}"
 
 #: src/app/redux/actions.js:111
 msgid "Cannot load list of TeamCity services: {{ error }}"
-msgstr ""
+msgstr "TeamCityサービスのリストを読み込めません: {{ error }}"
 
 #: src/app/build-status.js:68
 msgid "Comment"
