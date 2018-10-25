@@ -36,19 +36,19 @@ function getPresentationalWidgetTitle(state) {
 const WidgetContainer = connect(
   (state, {dashboardApi}) => ({
     isConfiguring: state.configuration.isConfiguring,
-    isLoadingBuildStatuses: state.isLoadingBuildStatuses,
+    widgetLoader: state.isLoadingBuildStatuses,
     // eslint-disable-next-line no-magic-numbers
-    refreshPeriod: state.refreshPeriod * 1000,
+    tickPeriod: state.refreshPeriod * 1000,
     dashboardApi,
     Configuration: ConfigurationContainer,
     Content: ContentContainer,
 
-    title: state.configuration.isConfiguring
+    widgetTitle: state.configuration.isConfiguring
       ? i18n('Status')
       : getPresentationalWidgetTitle(state)
   }),
   dispatch => ({
-    onRefresh: () => dispatch(reloadStatuses())
+    onTick: () => dispatch(reloadStatuses())
   })
 )(Widget);
 

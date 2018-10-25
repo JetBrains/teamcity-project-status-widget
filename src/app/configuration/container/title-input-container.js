@@ -10,7 +10,7 @@ const TitleInputContainer = connect(
   state => ({
     label: i18n('Optional title'),
     'data-test': 'widget-name-input',
-    value: state.configuration.title,
+    value: state.configuration.title || '',
     size: InputSize.AUTO
   }),
   dispatch => ({
