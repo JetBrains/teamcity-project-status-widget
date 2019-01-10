@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: jetbrains <mikhail.vink@jetbrains.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
-"PO-Revision-Date: 2018-10-10 18:46\n"
+"PO-Revision-Date: 2018-12-25 16:43\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -88,7 +88,7 @@ msgstr "失敗したビルドはありません"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr ""
+msgstr "エラー！不明なエラーが発生しました…"
 
 #: src/app/configuration/container/title-input-container.js:11
 msgid "Optional title"
@@ -147,7 +147,7 @@ msgstr "ウィジェットは1分ごとに更新されます"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
 msgid "Widget refreshes every {{minutesCount}} minutes"
-msgstr ""
+msgstr "ウィジェットは{{minutesCount}}分ごとに更新されます"
 
 #: src/app/content.js:47
 msgid "Widget setup is not finished yet."
@@ -159,5 +159,5 @@ msgstr "am|pm"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"
-msgstr ""
+msgstr "{{minutesCount}} 分"
 
