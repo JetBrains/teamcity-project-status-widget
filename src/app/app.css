@@ -11,4 +11,6 @@
 
 .widget {
   composes: font from "@jetbrains/ring-ui/components/global/global.css";
+
+  color: var(--ring-text-color);
 }
