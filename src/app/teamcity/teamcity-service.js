@@ -44,7 +44,7 @@ export default class TeamcityService {
         '$locator:(running:false,canceled:false,count:1),' +
         'build(number,webUrl,startDate,finishDate,status,statusText)' +
         '),' +
-        'investigations(investigation(' +
+        'investigations(investigation(state,' +
         'assignee(name,username),' +
         'assignment(user(name,username),timestamp,text),' +
         'resolution(type))' +

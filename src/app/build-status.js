@@ -83,7 +83,8 @@ function renderInvestigationTooltip(investigation) {
 
 function renderInvestigation(buildType) {
   const investigation = buildType.investigations.investigation[0];
-  return investigation && (
+  const investigationTaken = investigation && investigation.state === 'TAKEN';
+  return investigationTaken && (
     <Tooltip title={renderInvestigationTooltip(investigation)}>
       <div className={styles.investigation} data-test="investigation">
         {i18n('Is being investigated by: {{ user }}', {user: getName(investigation.assignee)})}
