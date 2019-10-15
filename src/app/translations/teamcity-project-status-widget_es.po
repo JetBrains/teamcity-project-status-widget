@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: JetBrains (jetbrains)\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
-"PO-Revision-Date: 2019-06-25 08:41\n"
+"PO-Revision-Date: 2019-10-15 14:55\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -66,7 +66,7 @@ msgstr "Ocultar proyectos secundarios"
 msgid "Investigator"
 msgstr "Investigador"
 
-#: src/app/build-status.js:89
+#: src/app/build-status.js:90
 msgid "Is being investigated by: {{ user }}"
 msgstr "Está siendo investigado por: {{ user }}"
 

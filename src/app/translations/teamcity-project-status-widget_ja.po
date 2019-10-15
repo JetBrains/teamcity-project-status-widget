@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: JetBrains (jetbrains)\n"
 "Language-Team: Japanese\n"
 "Language: ja_JP\n"
-"PO-Revision-Date: 2019-06-22 21:05\n"
+"PO-Revision-Date: 2019-10-15 14:53\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -66,7 +66,7 @@ msgstr "子プロジェクトを非表示"
 msgid "Investigator"
 msgstr "調査者"
 
-#: src/app/build-status.js:89
+#: src/app/build-status.js:90
 msgid "Is being investigated by: {{ user }}"
 msgstr "次の調査者が調査中です: {{ user }}"
 
