@@ -90,6 +90,13 @@ const webpackConfig = () => ({
     ]
   },
   devServer: {
+    // // Uncomment to enable https, set path to local https certificate
+    // host: 'localhost',
+    // port: 9010,
+    // https: true,
+    // key: fs.readFileSync('~/localhost.key'),
+    // cert: fs.readFileSync('~/localhost.crt'),
+
     headers: {
       'Access-Control-Allow-Origin': '*'
     },
