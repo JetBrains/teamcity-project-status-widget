@@ -20,13 +20,24 @@ msgstr ""
 msgid "Build configurations"
 msgstr ""
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:26
-#: src/app/configuration/component/configuration.js:33
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 msgid "Cancel"
 msgstr ""
 
-#: src/app/content.js:49
+#: src/app/content.js:57
 msgid "Cannot load build statuses"
+msgstr ""
+
+#: src/app/redux/actions.js:150
+msgid "Cannot load list of TeamCity configurations: {{ error }}"
+msgstr ""
+
+#: src/app/redux/actions.js:126
+msgid "Cannot load list of TeamCity projects: {{ error }}"
+msgstr ""
+
+#: src/app/redux/actions.js:111
+msgid "Cannot load list of TeamCity services: {{ error }}"
 msgstr ""
 
 #: src/app/build-status.js:68
@@ -38,7 +49,7 @@ msgstr ""
 msgid "Filter projects"
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:68
+#: src/app/configuration/component/configuration.js:67
 msgid "Hide child projects"
 msgstr ""
 
@@ -46,15 +57,15 @@ msgstr ""
 msgid "Investigator"
 msgstr ""
 
-#: src/app/build-status.js:89
+#: src/app/build-status.js:90
 msgid "Is being investigated by: {{ user }}"
 msgstr ""
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
 msgstr ""
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:115
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr ""
 
@@ -62,7 +73,7 @@ msgstr ""
 msgid "Manually"
 msgstr ""
 
-#: src/app/content.js:58
+#: src/app/content.js:66
 msgid "No failed builds"
 msgstr ""
 
@@ -83,16 +94,15 @@ msgstr ""
 msgid "Resolve"
 msgstr ""
 
-#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:23
-#: src/app/configuration/component/configuration.js:30
+#: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 msgid "Save"
 msgstr ""
 
-#: src/app/content.js:41
+#: src/app/content.js:49
 msgid "Set up..."
 msgstr ""
 
-#: src/app/configuration/component/configuration.js:57
+#: src/app/configuration/component/configuration.js:56
 msgid "Show green builds"
 msgstr ""
 
@@ -100,20 +110,20 @@ msgstr ""
 msgid "Since"
 msgstr ""
 
-#: src/app/container/title-container.js:23
-#: src/app/container/title-container.js:32
+#: src/app/container/widget-container.js:28
+#: src/app/container/widget-container.js:47
 msgid "Status"
 msgstr ""
 
-#: src/app/container/title-container.js:31
+#: src/app/container/widget-container.js:27
 msgid "Status: {{ project }}"
 msgstr ""
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:114
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
 msgstr ""
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:113
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
 msgstr ""
 
@@ -130,11 +140,11 @@ msgstr ""
 msgid "Widget refreshes every {{minutesCount}} minutes"
 msgstr ""
 
-#: src/app/content.js:39
+#: src/app/content.js:47
 msgid "Widget setup is not finished yet."
 msgstr ""
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:117
 msgid "am|pm"
 msgstr ""
 

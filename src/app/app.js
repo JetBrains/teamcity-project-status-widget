@@ -1,6 +1,5 @@
 import 'babel-polyfill';
 import DashboardAddons from 'hub-dashboard-addons';
-import {setLocale} from 'hub-dashboard-addons/dist/localization';
 import React from 'react';
 import {Provider} from 'react-redux';
 import {render} from 'react-dom';
@@ -8,10 +7,10 @@ import {render} from 'react-dom';
 import createStore from './redux/index';
 import {initWidget} from './redux/actions';
 import WidgetContainer from './container/widget-container';
-import TRANSLATIONS from './translations';
+import {initTranslations} from './translations';
 
 DashboardAddons.registerWidget((dashboardApi, registerWidgetApi) => {
-  setLocale(DashboardAddons.locale, TRANSLATIONS);
+  initTranslations(DashboardAddons.locale);
 
   const store = createStore(dashboardApi, registerWidgetApi);
   store.dispatch(initWidget());
