@@ -5,11 +5,13 @@ msgstr ""
 "Project-Id-Version: youtrackjetbrains\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
 "X-Crowdin-Project: youtrackjetbrains\n"
+"X-Crowdin-Project-ID: 295498\n"
 "X-Crowdin-Language: ru\n"
 "X-Crowdin-File: /widgets/teamcity-project-status-widget/default.pot\n"
+"X-Crowdin-File-ID: 30036\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2020-01-14 21:03\n"
+"PO-Revision-Date: 2022-05-20 12:47\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -68,11 +70,11 @@ msgstr "Исследователь"
 msgid "Is being investigated by: {{ user }}"
 msgstr "Исследует: {{ user }}"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:90
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
 msgstr "январь|февраль|март|апрель|май|июнь|июль|август|сентябрь|октябрь|ноябрь|декабрь"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:89
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:115
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
 msgstr "янв|фев|мар|апр|мая|июн|июл|авг|сен|окт|ноя|дек"
 
@@ -126,13 +128,13 @@ msgstr "Статус"
 msgid "Status: {{ project }}"
 msgstr "Статус: {{ project }}"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:88
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:114
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
 msgstr "воскресенье|понедельник|вторник|среда|четверг|пятница|суббота"
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:87
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:113
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
-msgstr "вск|пнд|втр|срд|чтв|птн|сбт"
+msgstr "вс|пн|вт|ср|чт|пт|сб"
 
 #: src/app/configuration/container/service-select-container.js:11
 #: src/app/configuration/container/service-select-container.js:13
@@ -151,7 +153,7 @@ msgstr "Виджет обновляется раз в {{minutesCount}} мин"
 msgid "Widget setup is not finished yet."
 msgstr "Настройка виджета еще не закончена."
 
-#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:91
+#: node_modules/hub-dashboard-addons/components/localization/src/localization.js:117
 msgid "am|pm"
 msgstr "ДП|ПП"
 

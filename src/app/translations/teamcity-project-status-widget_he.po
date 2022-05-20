@@ -2,162 +2,162 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: youtrackjetbrains\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: youtrackjetbrains\n"
-"X-Crowdin-Project-ID: 295498\n"
-"X-Crowdin-Language: eo\n"
+"Project-Id-Version: youtrack-custom-localization\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
+"X-Crowdin-Project: youtrack-custom-localization\n"
+"X-Crowdin-Project-ID: 309400\n"
+"X-Crowdin-Language: he\n"
 "X-Crowdin-File: /widgets/teamcity-project-status-widget/default.pot\n"
-"X-Crowdin-File-ID: 30036\n"
-"Language-Team: Esperanto\n"
-"Language: eo_UY\n"
-"PO-Revision-Date: 2022-05-20 12:48\n"
+"X-Crowdin-File-ID: 652258\n"
+"Language-Team: Hebrew\n"
+"Language: he_IL\n"
+"PO-Revision-Date: 2022-05-20 12:49\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
-msgstr "crwdns786795:0crwdne786795:0"
+msgstr ""
 
 #: src/app/build-status.js:54
 msgid "Assigned by"
-msgstr "crwdns787207:0crwdne787207:0"
+msgstr ""
 
 #: src/app/build-status.js:65
 msgid "Automatically when fixed"
-msgstr "crwdns787208:0crwdne787208:0"
+msgstr ""
 
 #: src/app/configuration/component/build-type-select.js:62
 msgid "Build configurations"
-msgstr "crwdns786796:0crwdne786796:0"
+msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 msgid "Cancel"
-msgstr "crwdns786497:0crwdne786497:0"
+msgstr ""
 
 #: src/app/content.js:57
 msgid "Cannot load build statuses"
-msgstr "crwdns786898:0crwdne786898:0"
+msgstr ""
 
 #: src/app/redux/actions.js:150
 msgid "Cannot load list of TeamCity configurations: {{ error }}"
-msgstr "crwdns270198678:0{{ error }}crwdne270198678:0"
+msgstr ""
 
 #: src/app/redux/actions.js:126
 msgid "Cannot load list of TeamCity projects: {{ error }}"
-msgstr "crwdns270198680:0{{ error }}crwdne270198680:0"
+msgstr ""
 
 #: src/app/redux/actions.js:111
 msgid "Cannot load list of TeamCity services: {{ error }}"
-msgstr "crwdns270198682:0{{ error }}crwdne270198682:0"
+msgstr ""
 
 #: src/app/build-status.js:68
 msgid "Comment"
-msgstr "crwdns787209:0crwdne787209:0"
+msgstr "הערה/תגובה"
 
 #: src/app/configuration/component/build-type-select.js:44
 #: src/app/configuration/component/project-select.js:48
 msgid "Filter projects"
-msgstr "crwdns786797:0crwdne786797:0"
+msgstr ""
 
 #: src/app/configuration/component/configuration.js:67
 msgid "Hide child projects"
-msgstr "crwdns786499:0crwdne786499:0"
+msgstr ""
 
 #: src/app/build-status.js:50
 msgid "Investigator"
-msgstr "crwdns787210:0crwdne787210:0"
+msgstr ""
 
 #: src/app/build-status.js:90
 msgid "Is being investigated by: {{ user }}"
-msgstr "crwdns787211:0{{ user }}crwdne787211:0"
+msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
-msgstr "crwdns786500:0crwdne786500:0"
+msgstr "ינואר|פברואר|מרץ|אפריל|מאי|יוני|יולי|אוגוסט|ספטמבר|אוקטובר|נובמבר|דצמבר"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:115
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
-msgstr "crwdns786501:0crwdne786501:0"
+msgstr ""
 
 #: src/app/build-status.js:64
 msgid "Manually"
-msgstr "crwdns787212:0crwdne787212:0"
+msgstr ""
 
 #: src/app/content.js:66
 msgid "No failed builds"
-msgstr "crwdns786899:0crwdne786899:0"
+msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr "crwdns804275:0crwdne804275:0"
+msgstr ""
 
 #: src/app/configuration/container/title-input-container.js:11
 msgid "Optional title"
-msgstr "crwdns786503:0crwdne786503:0"
+msgstr "כותרת אופציונלית"
 
 #: src/app/configuration/component/project-select.js:55
 #: src/app/configuration/component/project-select.js:56
 msgid "Project"
-msgstr "crwdns786798:0crwdne786798:0"
+msgstr "פרויקט"
 
 #: src/app/build-status.js:62
 msgid "Resolve"
-msgstr "crwdns787213:0crwdne787213:0"
+msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 msgid "Save"
-msgstr "crwdns786504:0crwdne786504:0"
+msgstr "שמור"
 
 #: src/app/content.js:49
 msgid "Set up..."
-msgstr "crwdns786506:0crwdne786506:0"
+msgstr ""
 
 #: src/app/configuration/component/configuration.js:56
 msgid "Show green builds"
-msgstr "crwdns786507:0crwdne786507:0"
+msgstr ""
 
 #: src/app/build-status.js:58
 msgid "Since"
-msgstr "crwdns787214:0crwdne787214:0"
+msgstr ""
 
 #: src/app/container/widget-container.js:28
 #: src/app/container/widget-container.js:47
 msgid "Status"
-msgstr "crwdns786799:0crwdne786799:0"
+msgstr ""
 
 #: src/app/container/widget-container.js:27
 msgid "Status: {{ project }}"
-msgstr "crwdns786800:0{{ project }}crwdne786800:0"
+msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:114
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
-msgstr "crwdns786508:0crwdne786508:0"
+msgstr "ראשון|שני|שלישי|רביעי|חמישי|שישי|שבת"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:113
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
-msgstr "crwdns786509:0crwdne786509:0"
+msgstr "א'|ב'|ג'|ד'|ה'|ו'|ש'"
 
 #: src/app/configuration/container/service-select-container.js:11
 #: src/app/configuration/container/service-select-container.js:13
 msgid "TeamCity server"
-msgstr "crwdns786801:0crwdne786801:0"
+msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:69
 msgid "Widget refreshes every minute"
-msgstr "crwdns786513:0crwdne786513:0"
+msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
 msgid "Widget refreshes every {{minutesCount}} minutes"
-msgstr "crwdns804277:0{{minutesCount}}crwdne804277:0"
+msgstr ""
 
 #: src/app/content.js:47
 msgid "Widget setup is not finished yet."
-msgstr "crwdns786900:0crwdne786900:0"
+msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:117
 msgid "am|pm"
-msgstr "crwdns786515:0crwdne786515:0"
+msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"
-msgstr "crwdns804279:0{{minutesCount}}crwdne804279:0"
+msgstr "{{minutesCount}} דקות"
 
