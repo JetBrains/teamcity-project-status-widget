@@ -8,7 +8,7 @@
   },
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
-    "build": "webpack -p --devtool sourcemap",
+    "build": "webpack -p",
     "dist": "npm run build && rm -f teamcity-project-status-widget.zip && zip -r -j teamcity-project-status-widget.zip ./dist/*.{js,json,html}",
     "test": "karma start",
     "lint": "eslint . && npm run stylelint",
