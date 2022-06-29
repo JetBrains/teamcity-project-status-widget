@@ -11,23 +11,23 @@ msgstr ""
 "X-Crowdin-File-ID: 652258\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
-"PO-Revision-Date: 2022-05-20 12:49\n"
+"PO-Revision-Date: 2022-06-29 11:14\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
-msgstr ""
+msgstr "Tutte le configurazioni della build"
 
 #: src/app/build-status.js:54
 msgid "Assigned by"
-msgstr ""
+msgstr "Assegnato da"
 
 #: src/app/build-status.js:65
 msgid "Automatically when fixed"
-msgstr ""
+msgstr "Automaticamente quando risolto"
 
 #: src/app/configuration/component/build-type-select.js:62
 msgid "Build configurations"
-msgstr ""
+msgstr "Configurazioni della build"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 msgid "Cancel"
@@ -35,19 +35,19 @@ msgstr "Annulla"
 
 #: src/app/content.js:57
 msgid "Cannot load build statuses"
-msgstr ""
+msgstr "Impossibile caricare gli stati della build"
 
 #: src/app/redux/actions.js:150
 msgid "Cannot load list of TeamCity configurations: {{ error }}"
-msgstr ""
+msgstr "Impossibile caricare l'elenco delle configurazioni di TeamCity: {{ error }}"
 
 #: src/app/redux/actions.js:126
 msgid "Cannot load list of TeamCity projects: {{ error }}"
-msgstr ""
+msgstr "Impossibile caricare l'elenco dei progetti di TeamCity: {{ error }}"
 
 #: src/app/redux/actions.js:111
 msgid "Cannot load list of TeamCity services: {{ error }}"
-msgstr ""
+msgstr "Impossibile caricare l'elenco dei servizi di TeamCity: {{ error }}"
 
 #: src/app/build-status.js:68
 msgid "Comment"
@@ -60,15 +60,15 @@ msgstr "Filtra i progetti"
 
 #: src/app/configuration/component/configuration.js:67
 msgid "Hide child projects"
-msgstr ""
+msgstr "Nascondi progetti figli"
 
 #: src/app/build-status.js:50
 msgid "Investigator"
-msgstr ""
+msgstr "Investigatore"
 
 #: src/app/build-status.js:90
 msgid "Is being investigated by: {{ user }}"
-msgstr ""
+msgstr "È oggetto di indagine da parte di: {{ user }}"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
@@ -80,11 +80,11 @@ msgstr "Gen|Feb|Mar|Apr|Mag|Giu|Lug|Ago|Set|Ott|Nov|Dic"
 
 #: src/app/build-status.js:64
 msgid "Manually"
-msgstr ""
+msgstr "Manualmente"
 
 #: src/app/content.js:66
 msgid "No failed builds"
-msgstr ""
+msgstr "Nessuna build fallita"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
@@ -101,7 +101,7 @@ msgstr "Progetto"
 
 #: src/app/build-status.js:62
 msgid "Resolve"
-msgstr ""
+msgstr "Risolvi"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 msgid "Save"
@@ -113,11 +113,11 @@ msgstr "Imposta..."
 
 #: src/app/configuration/component/configuration.js:56
 msgid "Show green builds"
-msgstr ""
+msgstr "Mostra build verdi"
 
 #: src/app/build-status.js:58
 msgid "Since"
-msgstr ""
+msgstr "Da"
 
 #: src/app/container/widget-container.js:28
 #: src/app/container/widget-container.js:47
@@ -126,7 +126,7 @@ msgstr "Stato"
 
 #: src/app/container/widget-container.js:27
 msgid "Status: {{ project }}"
-msgstr ""
+msgstr "Stato: {{ project }}"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:114
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
@@ -151,7 +151,7 @@ msgstr "Il widget si aggiorna ogni {{minutesCount}} minuti"
 
 #: src/app/content.js:47
 msgid "Widget setup is not finished yet."
-msgstr ""
+msgstr "La configurazione del widget non è ancora terminata."
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:117
 msgid "am|pm"
