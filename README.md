@@ -1,7 +1,11 @@
 # TeamCity Project Status Widget
 [![Build Status][ci-img]][ci-bt] [![JetBrains team project](http://jb.gg/badges/team.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 
-This widget displays a list of build configurations from TeamCity with their current statuses. This widget can be added to dashboards and project overview pages in a Hub installation.
+[YouTrack](https://www.jetbrains.com/youtrack/) dashboard widget, which displays a list of build configurations from TeamCity with their current statuses. This widget can be added to dashboards and project overview pages in a Hub installation.
+
+Widget's [page](https://plugins.jetbrains.com/plugin/11152-project-status) in JetBrains Marketplace
+
+[Code of Conduct](https://github.com/JetBrains?mkt_tok=NDI2LVFWRC0xMTQAAAGJp6WtB9LmtSBirsNeuBNY1QF5BWb8zNinjbzmIst2k7oYp9kSaSPovOXCCiRtCv2a1y6X6_wrdbfG0GD_w8v-nM8iMqX3avqoYCQSZISMXl-ZCCI_#code-of-conduct)
 
 ## Getting Started
 This project is open source. You are welcome to contribute to the development of this widget or use the source code as a springboard to develop your own widgets.
