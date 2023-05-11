@@ -95,13 +95,13 @@ function renderInvestigation(buildType) {
 
 export function isSuccessfulBuildType(buildType) {
   const build = buildType.builds.build[0];
-  return build.status === 'SUCCESS';
+  return !build || build.status === 'SUCCESS';
 }
 
 const BuildStatus = ({buildType, path}) => {
   const build = buildType.builds.build[0];
   const isSuccessful = isSuccessfulBuildType(buildType);
-  return (
+  return build ? (
     <div className={styles.build} data-test="build">
       <Link
         target="_top"
@@ -136,7 +136,7 @@ const BuildStatus = ({buildType, path}) => {
         {renderInvestigation(buildType)}
       </div>
     </div>
-  );
+  ) : '';
 };
 
 BuildStatus.propTypes = {
