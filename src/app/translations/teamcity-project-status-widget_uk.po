@@ -11,7 +11,7 @@ msgstr ""
 "X-Crowdin-File-ID: 652258\n"
 "Language-Team: Ukrainian\n"
 "Language: uk_UA\n"
-"PO-Revision-Date: 2022-06-28 14:10\n"
+"PO-Revision-Date: 2023-08-18 17:02\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -56,7 +56,7 @@ msgstr "Коментар"
 #: src/app/configuration/component/build-type-select.js:44
 #: src/app/configuration/component/project-select.js:48
 msgid "Filter projects"
-msgstr "Фільтрувати проекти"
+msgstr "Фільтрувати проєкти"
 
 #: src/app/configuration/component/configuration.js:67
 msgid "Hide child projects"
@@ -88,7 +88,7 @@ msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr ""
+msgstr "Отакої! Щось пішло не так…"
 
 #: src/app/configuration/container/title-input-container.js:11
 msgid "Optional title"
@@ -122,7 +122,7 @@ msgstr ""
 #: src/app/container/widget-container.js:28
 #: src/app/container/widget-container.js:47
 msgid "Status"
-msgstr ""
+msgstr "Статус"
 
 #: src/app/container/widget-container.js:27
 msgid "Status: {{ project }}"
@@ -143,11 +143,11 @@ msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:69
 msgid "Widget refreshes every minute"
-msgstr ""
+msgstr "Віджет оновлюється щохвилини"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
 msgid "Widget refreshes every {{minutesCount}} minutes"
-msgstr ""
+msgstr "Віджет оновлюється кожні {{minutesCount}} хв"
 
 #: src/app/content.js:47
 msgid "Widget setup is not finished yet."
@@ -155,9 +155,9 @@ msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:117
 msgid "am|pm"
-msgstr ""
+msgstr "дп|пп"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"
-msgstr ""
+msgstr "{{minutesCount}} хв"
 

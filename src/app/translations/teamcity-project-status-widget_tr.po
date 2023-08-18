@@ -11,7 +11,7 @@ msgstr ""
 "X-Crowdin-File-ID: 652258\n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
-"PO-Revision-Date: 2022-06-17 14:48\n"
+"PO-Revision-Date: 2023-08-18 17:02\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 msgid "Cancel"
-msgstr ""
+msgstr "İptal"
 
 #: src/app/content.js:57
 msgid "Cannot load build statuses"
@@ -39,24 +39,24 @@ msgstr ""
 
 #: src/app/redux/actions.js:150
 msgid "Cannot load list of TeamCity configurations: {{ error }}"
-msgstr ""
+msgstr "TeamCity yapılandırmalarının listesi yüklenemiyor: {{ error }}"
 
 #: src/app/redux/actions.js:126
 msgid "Cannot load list of TeamCity projects: {{ error }}"
-msgstr ""
+msgstr "TeamCity projelerinin listesi yüklenemiyor: {{ error }}"
 
 #: src/app/redux/actions.js:111
 msgid "Cannot load list of TeamCity services: {{ error }}"
-msgstr ""
+msgstr "TeamCity hizmetlerinin listesi yüklenemiyor: {{ error }}"
 
 #: src/app/build-status.js:68
 msgid "Comment"
-msgstr ""
+msgstr "Yorum"
 
 #: src/app/configuration/component/build-type-select.js:44
 #: src/app/configuration/component/project-select.js:48
 msgid "Filter projects"
-msgstr ""
+msgstr "Projeleri filtrele"
 
 #: src/app/configuration/component/configuration.js:67
 msgid "Hide child projects"
@@ -64,48 +64,48 @@ msgstr ""
 
 #: src/app/build-status.js:50
 msgid "Investigator"
-msgstr ""
+msgstr "Denetçi"
 
 #: src/app/build-status.js:90
 msgid "Is being investigated by: {{ user }}"
-msgstr ""
+msgstr "Denetleyen: {{ user }}"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:116
 msgid "January|February|March|April|May|June|July|August|September|October|November|December"
-msgstr ""
+msgstr "Ocak|Şubat|Mart|Nisan|Mayıs|Haziran|Temmuz|Ağustos|Eylül|Ekim|Kasım|Aralık"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:115
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
-msgstr ""
+msgstr "Oca|Şub|Mar|Nis|May|Haz|Tem|Ağu|Eyl|Eki|Kas|Ara"
 
 #: src/app/build-status.js:64
 msgid "Manually"
-msgstr ""
+msgstr "Manuel Olarak"
 
 #: src/app/content.js:66
 msgid "No failed builds"
-msgstr ""
+msgstr "Başarısız derleme yok"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr "Hoppala! Bir şeyler ters gitti..."
+msgstr "Hay aksi! Bir şeyler ters gitti..."
 
 #: src/app/configuration/container/title-input-container.js:11
 msgid "Optional title"
-msgstr ""
+msgstr "İsteğe bağlı başlık"
 
 #: src/app/configuration/component/project-select.js:55
 #: src/app/configuration/component/project-select.js:56
 msgid "Project"
-msgstr ""
+msgstr "Proje"
 
 #: src/app/build-status.js:62
 msgid "Resolve"
-msgstr ""
+msgstr "Çöz"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 msgid "Save"
-msgstr ""
+msgstr "Kaydet"
 
 #: src/app/content.js:49
 msgid "Set up..."
@@ -113,49 +113,49 @@ msgstr ""
 
 #: src/app/configuration/component/configuration.js:56
 msgid "Show green builds"
-msgstr ""
+msgstr "Yeşil derlemeleri göster"
 
 #: src/app/build-status.js:58
 msgid "Since"
-msgstr ""
+msgstr "Şu tarihten beri:"
 
 #: src/app/container/widget-container.js:28
 #: src/app/container/widget-container.js:47
 msgid "Status"
-msgstr ""
+msgstr "Durum"
 
 #: src/app/container/widget-container.js:27
 msgid "Status: {{ project }}"
-msgstr ""
+msgstr "Durum: {{ project }}"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:114
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
-msgstr ""
+msgstr "Pazar|Pazartesi|Salı|Çarşamba|Perşembe|Cuma|Cumartesi"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:113
 msgid "Sun|Mon|Tue|Wed|Thu|Fri|Sat"
-msgstr ""
+msgstr "Paz|Pzt|Sal|Çrş|Prş|Cum|Cmt"
 
 #: src/app/configuration/container/service-select-container.js:11
 #: src/app/configuration/container/service-select-container.js:13
 msgid "TeamCity server"
-msgstr ""
+msgstr "TeamCity sunucusu"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:69
 msgid "Widget refreshes every minute"
-msgstr ""
+msgstr "Widget her dakika yenilenir"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
 msgid "Widget refreshes every {{minutesCount}} minutes"
-msgstr "Widget {{minutesCount}} dakikada bir yenilenmekte"
+msgstr "Widget {{minutesCount}} dakikada bir yenilenir"
 
 #: src/app/content.js:47
 msgid "Widget setup is not finished yet."
-msgstr ""
+msgstr "Widget kurulumu henüz tamamlanmadı."
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:117
 msgid "am|pm"
-msgstr ""
+msgstr "öö|ös"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"

@@ -11,7 +11,7 @@ msgstr ""
 "X-Crowdin-File-ID: 652258\n"
 "Language-Team: Hungarian\n"
 "Language: hu_HU\n"
-"PO-Revision-Date: 2022-06-28 20:46\n"
+"PO-Revision-Date: 2023-08-18 17:01\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
@@ -39,15 +39,15 @@ msgstr ""
 
 #: src/app/redux/actions.js:150
 msgid "Cannot load list of TeamCity configurations: {{ error }}"
-msgstr ""
+msgstr "A TeamCity konfigurációk listája nem tölthető be: {{ error }}"
 
 #: src/app/redux/actions.js:126
 msgid "Cannot load list of TeamCity projects: {{ error }}"
-msgstr ""
+msgstr "A TeamCity-projektek listája nem tölthető be: {{ error }}"
 
 #: src/app/redux/actions.js:111
 msgid "Cannot load list of TeamCity services: {{ error }}"
-msgstr ""
+msgstr "A TeamCity-szolgáltatások listája nem tölthető be: {{ error }}"
 
 #: src/app/build-status.js:68
 msgid "Comment"

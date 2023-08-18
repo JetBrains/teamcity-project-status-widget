@@ -11,15 +11,15 @@ msgstr ""
 "X-Crowdin-File-ID: 652258\n"
 "Language-Team: Hebrew\n"
 "Language: he_IL\n"
-"PO-Revision-Date: 2022-06-29 11:13\n"
+"PO-Revision-Date: 2023-08-18 17:01\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
-msgstr ""
+msgstr "כל הגדרות הבנייה"
 
 #: src/app/build-status.js:54
 msgid "Assigned by"
-msgstr ""
+msgstr "הוקצה על-ידי"
 
 #: src/app/build-status.js:65
 msgid "Automatically when fixed"
@@ -27,11 +27,11 @@ msgstr ""
 
 #: src/app/configuration/component/build-type-select.js:62
 msgid "Build configurations"
-msgstr ""
+msgstr "הגדרות הבנייה"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:52
 msgid "Cancel"
-msgstr ""
+msgstr "ביטול"
 
 #: src/app/content.js:57
 msgid "Cannot load build statuses"
@@ -56,7 +56,7 @@ msgstr "הערה/תגובה"
 #: src/app/configuration/component/build-type-select.js:44
 #: src/app/configuration/component/project-select.js:48
 msgid "Filter projects"
-msgstr ""
+msgstr "סינון פרויקטים"
 
 #: src/app/configuration/component/configuration.js:67
 msgid "Hide child projects"
@@ -64,7 +64,7 @@ msgstr ""
 
 #: src/app/build-status.js:50
 msgid "Investigator"
-msgstr ""
+msgstr "חוקר"
 
 #: src/app/build-status.js:90
 msgid "Is being investigated by: {{ user }}"
@@ -76,19 +76,19 @@ msgstr "ינואר|פברואר|מרץ|אפריל|מאי|יוני|יולי|או�
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:115
 msgid "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec"
-msgstr ""
+msgstr "ינו'|פבר'|מרץ|אפר'|מאי|יונ'|יול'|אוג'|ספט'|אוק'|נוב'|דצמ'"
 
 #: src/app/build-status.js:64
 msgid "Manually"
-msgstr ""
+msgstr "באופן ידני"
 
 #: src/app/content.js:66
 msgid "No failed builds"
-msgstr ""
+msgstr "אין בניות שנכשלו"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/http-error-handler/http-error-handler.js:4
 msgid "Oops! Something went wrong..."
-msgstr ""
+msgstr "אופס! משהו השתבש..."
 
 #: src/app/configuration/container/title-input-container.js:11
 msgid "Optional title"
@@ -101,7 +101,7 @@ msgstr "פרויקט"
 
 #: src/app/build-status.js:62
 msgid "Resolve"
-msgstr ""
+msgstr "לפתור"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/configuration-form/configuration-form.js:45
 msgid "Save"
@@ -109,7 +109,7 @@ msgstr "שמור"
 
 #: src/app/content.js:49
 msgid "Set up..."
-msgstr ""
+msgstr "הגדרה..."
 
 #: src/app/configuration/component/configuration.js:56
 msgid "Show green builds"
@@ -117,16 +117,16 @@ msgstr ""
 
 #: src/app/build-status.js:58
 msgid "Since"
-msgstr ""
+msgstr "מ-"
 
 #: src/app/container/widget-container.js:28
 #: src/app/container/widget-container.js:47
 msgid "Status"
-msgstr ""
+msgstr "סטטוס"
 
 #: src/app/container/widget-container.js:27
 msgid "Status: {{ project }}"
-msgstr ""
+msgstr "סטטוס: {{ project }}"
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:114
 msgid "Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday"
@@ -139,7 +139,7 @@ msgstr "א'|ב'|ג'|ד'|ה'|ו'|ש'"
 #: src/app/configuration/container/service-select-container.js:11
 #: src/app/configuration/container/service-select-container.js:13
 msgid "TeamCity server"
-msgstr ""
+msgstr "שרת TeamCity"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:69
 msgid "Widget refreshes every minute"
@@ -147,7 +147,7 @@ msgstr ""
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:70
 msgid "Widget refreshes every {{minutesCount}} minutes"
-msgstr ""
+msgstr "הווידג'ט מתרענן כל {{minutesCount}} דקות"
 
 #: src/app/content.js:47
 msgid "Widget setup is not finished yet."
@@ -155,7 +155,7 @@ msgstr ""
 
 #: node_modules/hub-dashboard-addons/components/localization/src/localization.js:117
 msgid "am|pm"
-msgstr ""
+msgstr "לפנ\"צ|אחה\"צ"
 
 #: node_modules/@jetbrains/hub-widget-ui/src/refresh-period/refresh-period.js:64
 msgid "{{minutesCount}} min"
