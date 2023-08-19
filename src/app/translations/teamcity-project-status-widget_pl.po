@@ -11,7 +11,7 @@ msgstr ""
 "X-Crowdin-File-ID: 652258\n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
-"PO-Revision-Date: 2023-08-19 00:04\n"
+"PO-Revision-Date: 2023-08-19 00:35\n"
 
 #: src/app/configuration/component/build-type-select.js:63
 msgid "All build configurations"
