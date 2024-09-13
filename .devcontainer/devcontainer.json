@@ -1,0 +1,6 @@
+// Info https://containers.dev/implementors/json_reference/
+{
+  "name": "teamcity-project-status0widget",
+  "forwardPorts": [9010],
+  "image":  "huston007/node-electron@sha256:468fc51b8a0d8130b01d73e881b27a82d63e323140686e8dc9e6e28a5e6f92d0"
+}
